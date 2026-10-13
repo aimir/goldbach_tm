@@ -1,1 +1,6 @@
-/.lake
+__pycache__/
+*.py[cod]
+.lake/
+scratch/
+*.log
+.DS_Store

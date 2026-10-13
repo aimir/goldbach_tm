@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-08",
+  "headline": "Tm24.halts_iff_goldbach_counterexample",
+  "headline_file": "formal/GoldbachTm.lean",
+  "states": 24,
+  "initial_state": 18,
+  "blank_symbol": 0,
+  "input": "all-zero tape",
+  "lean_toolchain": "leanprover/lean4:v4.14.0-rc2",
+  "build": {
+    "command": "cd formal && lake build",
+    "result": "success"
+  },
+  "axiom_check": {
+    "command": "cd formal && lake env lean CheckAxioms.lean",
+    "result": "success",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "simulator_typecheck": {
+    "command": "cd formal && lake env lean GoldbachTm/Tm24/Sim24.lean",
+    "result": "success"
+  },
+  "source_sha256": {
+    "formal/CheckAxioms.lean": "a1070dd4f4a278477d9c940fe351ac30c174118e85326777091d7eef074cf1a0",
+    "formal/GoldbachTm/Basic.lean": "e862b629dd2388b55686b5f9e830634ace0a0b60617882e2ca400d0925ef6267",
+    "formal/GoldbachTm/Format.lean": "56ee595d5e9a2e6380cf549760d43be9d884dbae33e0627c484ee27fa92b4736",
+    "formal/GoldbachTm/ListBlank.lean": "5d5dcdb627761ffb1d35893cd7099cbc2517c1f28d96a2945135ae00189ec7a3",
+    "formal/GoldbachTm/Tm24/Correctness.lean": "44727c02080b8e4b5a8fff0fd551fdc5b3d7016b507d4d9bcb9bd86f771d6f49",
+    "formal/GoldbachTm/Tm24/Growth.lean": "4d143a4ff44ebb554db7fff5e2c334129ea7abb0404d52a9dfc5be778038efda",
+    "formal/GoldbachTm/Tm24/LocalTransitions.lean": "bc0699dcfd9e5ceb050a1fd39149b71a1e9189f0ac4f35646853ba419fa1a54a",
+    "formal/GoldbachTm/Tm24/Machine.lean": "f070709d71e7374e8ac0ea3a88e4438d8a001df5b240dc4d3ed9731f92f7051d",
+    "formal/GoldbachTm/Tm24/MarkerLoops.lean": "0585743f638a7e1b5138a98d1e3a501f19f7a6f1ea0786783ba5e130150591cd",
+    "formal/GoldbachTm/Tm24/PairSearch.lean": "6fc131d04393918563d6891a515eb76a17db38463f4922c21bc4f295907d2d44",
+    "formal/GoldbachTm/Tm24/Primality.lean": "864e6b19b97ab2538c7325a6afb6e13c561995414b2e449676d7892a91c9b778",
+    "formal/GoldbachTm/Tm24/Scans.lean": "d290e16ff58979e9e85bc786a4bd9b798e29cd67e71e7470f54e60b652ed0757",
+    "formal/GoldbachTm/Tm24/Sim24.lean": "9f80e60fc1a6177eea092cfae05971977ac3d8ac780a0817975f208686d08fc1",
+    "formal/GoldbachTm.lean": "9e0c74be1c41a07864c5c56a28a8effb03f1bc92f50aaeac2c3437dc9378c9a9",
+    "formal/lakefile.lean": "ca2d1f708571edc74359b6b6f9e1bdb9b67ad6f41cead50bc63e82118d847b42",
+    "formal/lean-toolchain": "d52d5cdb3e01a10bfad5a9ff41525619b09c1da9ec7be25b232a37216ede2df4",
+    "formal/lake-manifest.json": "c7602c58bd2ab7fba6541f8436cb03e125545252100f16ab2f2fd19639a6f2e6",
+    "machines/goldbach24.tm": "f21db55745ed43333cc753861ce8509244884b030e74ff57436673ffa77265b6"
+  }
+}

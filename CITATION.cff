@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Please cite this release and the upstream work credited in README.md."
+title: "A formally verified 24-state Goldbach Turing machine"
+type: software
+authors:
+  - name: aimir
+    website: "https://github.com/aimir"
+repository-code: "https://github.com/aimir/goldbach_tm"
+url: "https://github.com/aimir/goldbach_tm/releases/tag/v0.1.0"
+version: "0.1.0"
+date-released: 2026-10-12
+license: Apache-2.0
+abstract: >-
+  A 24-state binary Turing machine whose blank-tape halting is equivalent
+  to a counterexample to Goldbach's conjecture, with an end-to-end Lean proof.
+  The machine and proof adapt Yijun Leng's 25-state construction.

@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-08",
+  "accepted_states": 24,
+  "base_table": "machines/goldbach24.tm",
+  "base_table_sha256": "f21db55745ed43333cc753861ce8509244884b030e74ff57436673ffa77265b6",
+  "outcome": "No smaller machine accepted. The 24-state machine and all proof-pinned sources are unchanged.",
+  "source_sha256": {
+    "tools/search23.cpp": "5bc769901153d8df06ce6fbd4317d76afbeabc8cbed0654a8c5066571a5d2bf1",
+    "tools/phase_screen.hpp": "69b5c17934a9853b7fb17a1e742d3e3033d9c543040d31068351086af97ce0d2",
+    "tools/search23.py": "7f3778ca33d379eeaca578b3c59a3729e6211682b989f922082c6339875253bc",
+    "tools/search_scans.py": "d8f7c99bf411ee3257addf8611184e54aeaf585c83e382ec4ee7500002e0a0e5"
+  },
+  "runs": [
+    {
+      "command": "python3 tools/search23.py --groups all --output scratch/strict-one",
+      "method": "repair",
+      "groups": "all",
+      "repairs": 1,
+      "pairs_only": false,
+      "input_sha256": "04fe0e944f77909fc9b5944ab52b934e6bb83e814972f62fe025075b42529bc4",
+      "complete": true,
+      "summary": {
+        "ordered_pairs": 552,
+        "repairs": 1,
+        "evaluations": 847044,
+        "simulated_steps": 227676528,
+        "fixtures": 51,
+        "distinct_finite_survivors": 0
+      }
+    },
+    {
+      "command": "python3 tools/search23.py --groups all --repairs 2 --output scratch/strict-two-all",
+      "method": "repair",
+      "groups": "all",
+      "repairs": 2,
+      "pairs_only": false,
+      "input_sha256": "04fe0e944f77909fc9b5944ab52b934e6bb83e814972f62fe025075b42529bc4",
+      "complete": true,
+      "summary": {
+        "ordered_pairs": 552,
+        "repairs": 2,
+        "evaluations": 1243956932,
+        "simulated_steps": 173213658361,
+        "fixtures": 51,
+        "distinct_finite_survivors": 0
+      }
+    },
+    {
+      "command": "python3 tools/search23.py --method solver --repairs 4 --iterations 10000 --output scratch/strict-solver",
+      "method": "solver",
+      "groups": "scans",
+      "repairs": 4,
+      "pairs_only": false,
+      "input_sha256": "04fe0e944f77909fc9b5944ab52b934e6bb83e814972f62fe025075b42529bc4",
+      "complete": true,
+      "seed": 2423,
+      "z3": "4.15.4",
+      "candidate_budget_per_pair": 10000,
+      "ordered_pairs": 42,
+      "finished_pairs": 42,
+      "checked_tables": 420000,
+      "pair_status_counts": {
+        "budget": 42
+      },
+      "finite_survivors": 0,
+      "non_budget_results": []
+    },
+    {
+      "command": "python3 tools/search23.py --method solver --repairs 6 --iterations 3000 --seed 626 --output scratch/strict-solver6",
+      "method": "solver",
+      "groups": "scans",
+      "repairs": 6,
+      "pairs_only": false,
+      "input_sha256": "04fe0e944f77909fc9b5944ab52b934e6bb83e814972f62fe025075b42529bc4",
+      "complete": true,
+      "seed": 626,
+      "z3": "4.15.4",
+      "candidate_budget_per_pair": 3000,
+      "ordered_pairs": 42,
+      "finished_pairs": 42,
+      "checked_tables": 126000,
+      "pair_status_counts": {
+        "budget": 42
+      },
+      "finite_survivors": 0,
+      "non_budget_results": []
+    },
+    {
+      "command": "python3 tools/search23.py --method solver --repairs 6 --iterations 3000 --seed 735 --pairs-only --output scratch/strict-solver-pairs",
+      "method": "solver",
+      "groups": "scans",
+      "repairs": 6,
+      "pairs_only": true,
+      "input_sha256": "1ce71f5216711431a585a0a6f702c835d1535e23831d199567a5babdf359eafb",
+      "complete": true,
+      "seed": 735,
+      "z3": "4.15.4",
+      "candidate_budget_per_pair": 3000,
+      "ordered_pairs": 42,
+      "finished_pairs": 42,
+      "checked_tables": 126000,
+      "pair_status_counts": {
+        "budget": 42
+      },
+      "finite_survivors": 0,
+      "non_budget_results": []
+    }
+  ],
+  "validation": {
+    "regression_tests": 27,
+    "baseline_search_survivors": 7,
+    "independent_24_state_report": "unchanged",
+    "baseline_audit_report": "unchanged",
+    "formal_source_and_table_hashes": "all match reference/proof24.json"
+  },
+  "scope": "Finite phase contracts, bounded runs and startup at 4. Counts include repeated tables. Solver budget/unknown is inconclusive; UNSAT would concern only the finite encoded problem. No lower bound on equivalent Turing machines."
+}

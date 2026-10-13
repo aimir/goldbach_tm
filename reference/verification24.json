@@ -1,0 +1,447 @@
+{
+  "states": 24,
+  "start_state": 18,
+  "table_sha256": "f21db55745ed43333cc753861ce8509244884b030e74ff57436673ffa77265b6",
+  "bootstrap_steps": 25,
+  "bootstrap_even": 4,
+  "primality": {
+    "cases": 256,
+    "range": [
+      1,
+      128
+    ],
+    "steps": 16371996
+  },
+  "growth": {
+    "cases": 1056,
+    "left_range": [
+      1,
+      32
+    ],
+    "right_range": [
+      0,
+      32
+    ],
+    "steps": 1123760
+  },
+  "pair_boundaries": {
+    "cases": 199,
+    "summand_range": [
+      1,
+      20
+    ],
+    "steps": 203020
+  },
+  "even_boundaries": [
+    {
+      "input": 4,
+      "outcome": "next_even",
+      "steps": 73
+    },
+    {
+      "input": 6,
+      "outcome": "next_even",
+      "steps": 145
+    },
+    {
+      "input": 8,
+      "outcome": "next_even",
+      "steps": 243
+    },
+    {
+      "input": 10,
+      "outcome": "next_even",
+      "steps": 417
+    },
+    {
+      "input": 12,
+      "outcome": "next_even",
+      "steps": 801
+    },
+    {
+      "input": 14,
+      "outcome": "next_even",
+      "steps": 1091
+    },
+    {
+      "input": 16,
+      "outcome": "next_even",
+      "steps": 1653
+    },
+    {
+      "input": 18,
+      "outcome": "next_even",
+      "steps": 2403
+    },
+    {
+      "input": 20,
+      "outcome": "next_even",
+      "steps": 3329
+    },
+    {
+      "input": 22,
+      "outcome": "next_even",
+      "steps": 4503
+    },
+    {
+      "input": 24,
+      "outcome": "next_even",
+      "steps": 5763
+    },
+    {
+      "input": 26,
+      "outcome": "next_even",
+      "steps": 7651
+    },
+    {
+      "input": 28,
+      "outcome": "next_even",
+      "steps": 10525
+    },
+    {
+      "input": 30,
+      "outcome": "next_even",
+      "steps": 12581
+    },
+    {
+      "input": 32,
+      "outcome": "next_even",
+      "steps": 14791
+    },
+    {
+      "input": 34,
+      "outcome": "next_even",
+      "steps": 17929
+    },
+    {
+      "input": 36,
+      "outcome": "next_even",
+      "steps": 20641
+    },
+    {
+      "input": 38,
+      "outcome": "next_even",
+      "steps": 26171
+    },
+    {
+      "input": 40,
+      "outcome": "next_even",
+      "steps": 29931
+    },
+    {
+      "input": 42,
+      "outcome": "next_even",
+      "steps": 33585
+    },
+    {
+      "input": 44,
+      "outcome": "next_even",
+      "steps": 40331
+    },
+    {
+      "input": 46,
+      "outcome": "next_even",
+      "steps": 46365
+    },
+    {
+      "input": 48,
+      "outcome": "next_even",
+      "steps": 51105
+    },
+    {
+      "input": 50,
+      "outcome": "next_even",
+      "steps": 60133
+    },
+    {
+      "input": 52,
+      "outcome": "next_even",
+      "steps": 74907
+    },
+    {
+      "input": 54,
+      "outcome": "next_even",
+      "steps": 81019
+    },
+    {
+      "input": 56,
+      "outcome": "next_even",
+      "steps": 85617
+    },
+    {
+      "input": 58,
+      "outcome": "next_even",
+      "steps": 98447
+    },
+    {
+      "input": 60,
+      "outcome": "next_even",
+      "steps": 105933
+    },
+    {
+      "input": 62,
+      "outcome": "next_even",
+      "steps": 117423
+    },
+    {
+      "input": 64,
+      "outcome": "next_even",
+      "steps": 129629
+    },
+    {
+      "input": 66,
+      "outcome": "next_even",
+      "steps": 138491
+    },
+    {
+      "input": 68,
+      "outcome": "next_even",
+      "steps": 156385
+    },
+    {
+      "input": 70,
+      "outcome": "next_even",
+      "steps": 171043
+    },
+    {
+      "input": 72,
+      "outcome": "next_even",
+      "steps": 181567
+    },
+    {
+      "input": 74,
+      "outcome": "next_even",
+      "steps": 202991
+    },
+    {
+      "input": 76,
+      "outcome": "next_even",
+      "steps": 220493
+    },
+    {
+      "input": 78,
+      "outcome": "next_even",
+      "steps": 232823
+    },
+    {
+      "input": 80,
+      "outcome": "next_even",
+      "steps": 269099
+    },
+    {
+      "input": 82,
+      "outcome": "next_even",
+      "steps": 278579
+    },
+    {
+      "input": 84,
+      "outcome": "next_even",
+      "steps": 292859
+    },
+    {
+      "input": 86,
+      "outcome": "next_even",
+      "steps": 322541
+    },
+    {
+      "input": 88,
+      "outcome": "next_even",
+      "steps": 352535
+    },
+    {
+      "input": 90,
+      "outcome": "next_even",
+      "steps": 369051
+    },
+    {
+      "input": 92,
+      "outcome": "next_even",
+      "steps": 396803
+    },
+    {
+      "input": 94,
+      "outcome": "next_even",
+      "steps": 447153
+    },
+    {
+      "input": 96,
+      "outcome": "next_even",
+      "steps": 465907
+    },
+    {
+      "input": 98,
+      "outcome": "next_even",
+      "steps": 457005
+    },
+    {
+      "input": 100,
+      "outcome": "next_even",
+      "steps": 512575
+    },
+    {
+      "input": 102,
+      "outcome": "next_even",
+      "steps": 533569
+    },
+    {
+      "input": 104,
+      "outcome": "next_even",
+      "steps": 578043
+    },
+    {
+      "input": 106,
+      "outcome": "next_even",
+      "steps": 612745
+    },
+    {
+      "input": 108,
+      "outcome": "next_even",
+      "steps": 636265
+    },
+    {
+      "input": 110,
+      "outcome": "next_even",
+      "steps": 686261
+    },
+    {
+      "input": 112,
+      "outcome": "next_even",
+      "steps": 725199
+    },
+    {
+      "input": 114,
+      "outcome": "next_even",
+      "steps": 751389
+    },
+    {
+      "input": 116,
+      "outcome": "next_even",
+      "steps": 807375
+    },
+    {
+      "input": 118,
+      "outcome": "next_even",
+      "steps": 861725
+    },
+    {
+      "input": 120,
+      "outcome": "next_even",
+      "steps": 890871
+    },
+    {
+      "input": 122,
+      "outcome": "next_even",
+      "steps": 923921
+    },
+    {
+      "input": 124,
+      "outcome": "next_even",
+      "steps": 1068803
+    },
+    {
+      "input": 126,
+      "outcome": "next_even",
+      "steps": 1127409
+    },
+    {
+      "input": 128,
+      "outcome": "next_even",
+      "steps": 1087277
+    }
+  ],
+  "synthetic_halting_odd_boundaries": [
+    {
+      "input": 11,
+      "outcome": "halt",
+      "steps": 1099
+    },
+    {
+      "input": 17,
+      "outcome": "halt",
+      "steps": 4981
+    },
+    {
+      "input": 23,
+      "outcome": "halt",
+      "steps": 15097
+    },
+    {
+      "input": 27,
+      "outcome": "halt",
+      "steps": 28157
+    },
+    {
+      "input": 29,
+      "outcome": "halt",
+      "steps": 30115
+    },
+    {
+      "input": 35,
+      "outcome": "halt",
+      "steps": 68383
+    },
+    {
+      "input": 37,
+      "outcome": "halt",
+      "steps": 78219
+    },
+    {
+      "input": 41,
+      "outcome": "halt",
+      "steps": 112739
+    },
+    {
+      "input": 47,
+      "outcome": "halt",
+      "steps": 209519
+    },
+    {
+      "input": 51,
+      "outcome": "halt",
+      "steps": 298885
+    },
+    {
+      "input": 53,
+      "outcome": "halt",
+      "steps": 299935
+    },
+    {
+      "input": 57,
+      "outcome": "halt",
+      "steps": 410887
+    },
+    {
+      "input": 59,
+      "outcome": "halt",
+      "steps": 417605
+    }
+  ],
+  "blank_trace_steps": 1000000,
+  "observed_read_masks": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    2
+  ],
+  "scope": "Finite computational checks; unbounded correctness is a separate Lean theorem."
+}

@@ -1,0 +1,54 @@
+{
+  "repository": "https://github.com/lengyijun/goldbach_tm",
+  "commit": "6cd292062516a0a14ea1b34f2ab75154cae7ab1e",
+  "retrieved": "2026-10-08",
+  "license": "Apache-2.0",
+  "unmodified_files_sha256": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "formal/lean-toolchain": "d52d5cdb3e01a10bfad5a9ff41525619b09c1da9ec7be25b232a37216ede2df4",
+    "formal/lake-manifest.json": "c7602c58bd2ab7fba6541f8436cb03e125545252100f16ab2f2fd19639a6f2e6",
+    "formal/GoldbachTm/Basic.lean": "e862b629dd2388b55686b5f9e830634ace0a0b60617882e2ca400d0925ef6267",
+    "formal/GoldbachTm/Format.lean": "56ee595d5e9a2e6380cf549760d43be9d884dbae33e0627c484ee27fa92b4736",
+    "formal/GoldbachTm/ListBlank.lean": "5d5dcdb627761ffb1d35893cd7099cbc2517c1f28d96a2945135ae00189ec7a3",
+    "reference/upstream/TuringMachine25.lean": "9fa72dad7c4b903747ab81debe6cc1a068e9cf548fe1a10ab0b33375e791e9e0"
+  },
+  "omitted": "Historical PDF, workflows, 31-state development, and superseded 25-state proof modules; original transition source retained for audit.",
+  "modified_wrappers": [
+    "formal/GoldbachTm.lean",
+    "formal/lakefile.lean"
+  ],
+  "upstream_proof_rebuilt": false,
+  "source_hashes_at_initial_import": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "formal/lean-toolchain": "d52d5cdb3e01a10bfad5a9ff41525619b09c1da9ec7be25b232a37216ede2df4",
+    "formal/lake-manifest.json": "c7602c58bd2ab7fba6541f8436cb03e125545252100f16ab2f2fd19639a6f2e6",
+    "formal/GoldbachTm/Tm25/TuringMachine25.lean": "9fa72dad7c4b903747ab81debe6cc1a068e9cf548fe1a10ab0b33375e791e9e0",
+    "formal/GoldbachTm/Tm25/Search0.lean": "0982b99f4f4240440a28b344d69045853f850ccb75766915f07f93140a627fce",
+    "formal/GoldbachTm/Tm25/Miscellaneous.lean": "1c92313d6878b8b63593bc16300f15c0a4e670699f5fbb6528813f547e5077de",
+    "formal/GoldbachTm/Tm25/Transition.lean": "b889d7369d6d802bac96728c1742e8d733dc083f177fefec8b38d0b82c402e22",
+    "formal/GoldbachTm/Tm25/Content.lean": "c6903fe3294e08fcef8709fc5a5ab223821d3e315c10b7b99f6d3b84a44187de",
+    "formal/GoldbachTm/Tm25/Prime.lean": "4afda6358ef645f54a28018bf0da3eca36bd3c4dd60b4a6d64e2c46dc9949f89",
+    "formal/GoldbachTm/Tm25/PBP.lean": "df885722eacea266de412eb27cc41f79f808362ac51ca425ed6747ba2ccb6dbc",
+    "formal/GoldbachTm/Tm25/Sim25.lean": "f5b2846a68dc001d884d44fd64ed344221159fd4449459a63ee538c77b67a7b9",
+    "formal/GoldbachTm/Tm25/SearchUnvisitedBranch.lean": "9f868951849f5690556c3f08a04c0fb96ba575cc61c299ce535fdad56365cbd9",
+    "formal/GoldbachTm/Basic.lean": "e862b629dd2388b55686b5f9e830634ace0a0b60617882e2ca400d0925ef6267",
+    "formal/GoldbachTm/Format.lean": "56ee595d5e9a2e6380cf549760d43be9d884dbae33e0627c484ee27fa92b4736",
+    "formal/GoldbachTm/ListBlank.lean": "5d5dcdb627761ffb1d35893cd7099cbc2517c1f28d96a2945135ae00189ec7a3"
+  },
+  "derived_proof_files": {
+    "formal/GoldbachTm/Tm24/Machine.lean": "GoldbachTm/Tm25/TuringMachine25.lean",
+    "formal/GoldbachTm/Tm24/Scans.lean": "GoldbachTm/Tm25/Search0.lean",
+    "formal/GoldbachTm/Tm24/LocalTransitions.lean": "GoldbachTm/Tm25/Transition.lean",
+    "formal/GoldbachTm/Tm24/MarkerLoops.lean": "GoldbachTm/Tm25/Miscellaneous.lean",
+    "formal/GoldbachTm/Tm24/Primality.lean": "GoldbachTm/Tm25/Prime.lean",
+    "formal/GoldbachTm/Tm24/PairSearch.lean": "GoldbachTm/Tm25/PBP.lean",
+    "formal/GoldbachTm/Tm24/Correctness.lean": "GoldbachTm/Tm25/Content.lean",
+    "formal/GoldbachTm/Tm24/Sim24.lean": "GoldbachTm/Tm25/Sim25.lean"
+  },
+  "new_proof_files": [
+    "formal/GoldbachTm/Tm24/Growth.lean",
+    "formal/GoldbachTm.lean"
+  ],
+  "optimized_proof_verified": true,
+  "optimized_headline": "Tm24.halts_iff_goldbach_counterexample"
+}

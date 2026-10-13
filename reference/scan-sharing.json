@@ -1,0 +1,30 @@
+{
+  "ordered_scan_pairs": 48,
+  "evaluations": 218976,
+  "simulated_steps": 91248265,
+  "core_fixtures": 28,
+  "outer_fixtures": 23,
+  "core_passes": 24,
+  "bootstrap_passes": 21,
+  "outer_passes": 21,
+  "distinct_finite_survivors": 7,
+  "date": "2026-10-08",
+  "command": "python3 tools/search_scans.py --output scratch/scan-sharing",
+  "selected_candidate": 6,
+  "selected_change": {
+    "original_removed_state": 22,
+    "initial_state": 18,
+    "transition": "0, read 0: write 0, move right, target 10"
+  },
+  "screening": "First prime exit (including damaged tapes), first canonical pair/outer boundary (including wrong numbers), blank bootstrap to 4, and whole even/odd phase cases.",
+  "limits": {
+    "simulator_cells": 1024,
+    "head_interval": [
+      128,
+      895
+    ],
+    "extra_ones_cap": 12,
+    "steps": "3 times the baseline fixture steps plus 100"
+  },
+  "scope": "Seven finite-test survivors, one selected machine formally proved. This is not an exhaustive search for all smaller equivalent machines."
+}

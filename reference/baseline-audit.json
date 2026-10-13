@@ -1,0 +1,3065 @@
+{
+  "upstream_commit": "6cd292062516a0a14ea1b34f2ab75154cae7ab1e",
+  "table_sha256": "f00f1fa7dc2e4bcf78757a5a53abbfd1d168f6be028a23fcbf586c2368bdac4c",
+  "states": 25,
+  "halting_branches": 1,
+  "blank_steps": 1000000,
+  "observed_branches": 49,
+  "last_first_branch_step_zero_based": 852,
+  "first_branch_visits": {
+    "0:0": 0,
+    "22:0": 1,
+    "23:1": 2,
+    "23:0": 3,
+    "0:1": 4,
+    "1:1": 5,
+    "2:0": 6,
+    "20:1": 7,
+    "20:0": 9,
+    "22:1": 12,
+    "2:1": 21,
+    "3:1": 22,
+    "4:1": 23,
+    "5:1": 24,
+    "5:0": 26,
+    "7:0": 27,
+    "9:0": 28,
+    "10:1": 29,
+    "11:0": 30,
+    "12:0": 31,
+    "14:1": 32,
+    "14:0": 33,
+    "15:0": 34,
+    "4:0": 35,
+    "16:1": 36,
+    "16:0": 38,
+    "17:0": 39,
+    "9:1": 40,
+    "21:1": 41,
+    "21:0": 45,
+    "17:1": 46,
+    "24:1": 47,
+    "1:0": 50,
+    "12:1": 92,
+    "13:1": 93,
+    "13:0": 94,
+    "6:0": 95,
+    "8:1": 96,
+    "8:0": 97,
+    "10:0": 99,
+    "11:1": 101,
+    "6:1": 107,
+    "3:0": 187,
+    "15:1": 422,
+    "18:0": 423,
+    "19:1": 424,
+    "19:0": 425,
+    "18:1": 829,
+    "7:1": 852
+  },
+  "quotient_conflicts": [
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        0,
+        2
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        0,
+        3
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        0,
+        4
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        0,
+        5
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        0,
+        6
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        0,
+        7
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        0,
+        8
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        0,
+        9
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        0,
+        10
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        0,
+        12
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        0,
+        13
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        0,
+        14
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        0,
+        15
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        0,
+        16
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        0,
+        17
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        0,
+        18
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        0,
+        20
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        0,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        0,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        0,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        1,
+        3
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        1,
+        4
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        1,
+        5
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        1,
+        6
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        1,
+        7
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        1,
+        8
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        1,
+        9
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        1,
+        10
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        1,
+        11
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        1,
+        12
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        1,
+        13
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        1,
+        14
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        1,
+        15
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        1,
+        16
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        1,
+        17
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        1,
+        18
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        1,
+        19
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        1,
+        20
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        1,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        1,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        1,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        2,
+        3
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        2,
+        4
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        2,
+        5
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        2,
+        6
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        2,
+        7
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        2,
+        8
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        2,
+        9
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        2,
+        10
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        2,
+        11
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        2,
+        12
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        2,
+        13
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        2,
+        14
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        2,
+        15
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        2,
+        16
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        2,
+        17
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        2,
+        18
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        2,
+        19
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        2,
+        20
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        2,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        2,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        2,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        3,
+        4
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        3,
+        5
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        3,
+        7
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        3,
+        8
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        3,
+        9
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        3,
+        10
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        3,
+        11
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        3,
+        13
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        3,
+        14
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        3,
+        15
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        3,
+        16
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        3,
+        17
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        3,
+        18
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        3,
+        19
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        3,
+        20
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        3,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        3,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        3,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        3,
+        24
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        4,
+        5
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        4,
+        6
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        4,
+        7
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        4,
+        8
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        4,
+        10
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        4,
+        11
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        4,
+        12
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        4,
+        14
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        4,
+        15
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        4,
+        17
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        4,
+        18
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        4,
+        19
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        4,
+        20
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        4,
+        21
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        4,
+        22
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        4,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        4,
+        24
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        5,
+        6
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        5,
+        7
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        5,
+        9
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        5,
+        10
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        5,
+        11
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        5,
+        12
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        5,
+        13
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        5,
+        14
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        5,
+        15
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        5,
+        16
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        5,
+        18
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        5,
+        19
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        5,
+        20
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        5,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        5,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        5,
+        23
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        0,
+        7
+      ]
+    },
+    {
+      "pair": [
+        5,
+        24
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        6,
+        7
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        6,
+        8
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        6,
+        9
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        6,
+        10
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        6,
+        11
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        6,
+        13
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        6,
+        14
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        6,
+        15
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        6,
+        16
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        6,
+        17
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        6,
+        18
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        6,
+        19
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        6,
+        20
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        6,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        6,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        6,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        6,
+        24
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        7,
+        8
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        7,
+        9
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        7,
+        10
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        7,
+        11
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        7,
+        12
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        7,
+        13
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        7,
+        14
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        7,
+        15
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        4,
+        9
+      ]
+    },
+    {
+      "pair": [
+        7,
+        16
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        7,
+        17
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        7,
+        18
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        7,
+        19
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        2,
+        9
+      ]
+    },
+    {
+      "pair": [
+        7,
+        20
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        7,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        7,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        7,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        7,
+        24
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        8,
+        9
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        8,
+        10
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        8,
+        11
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        8,
+        12
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        8,
+        13
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        8,
+        14
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        8,
+        15
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        8,
+        16
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        8,
+        18
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        8,
+        19
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        8,
+        20
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        8,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        8,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        8,
+        23
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        0,
+        9
+      ]
+    },
+    {
+      "pair": [
+        8,
+        24
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        9,
+        10
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        9,
+        11
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        9,
+        12
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        9,
+        13
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        9,
+        14
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        9,
+        15
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        9,
+        16
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        9,
+        17
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        9,
+        10
+      ]
+    },
+    {
+      "pair": [
+        9,
+        18
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        9,
+        19
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        9,
+        20
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        9,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        9,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        9,
+        23
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        0,
+        10
+      ]
+    },
+    {
+      "pair": [
+        9,
+        24
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        10,
+        11
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        10,
+        12
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        10,
+        13
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        10,
+        14
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        10,
+        15
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        4,
+        10
+      ]
+    },
+    {
+      "pair": [
+        10,
+        16
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        10,
+        17
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        10,
+        18
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        10,
+        19
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        2,
+        10
+      ]
+    },
+    {
+      "pair": [
+        10,
+        20
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        10,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        10,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        10,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        10,
+        24
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        11,
+        12
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        11,
+        13
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        11,
+        14
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        11,
+        15
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        4,
+        12
+      ]
+    },
+    {
+      "pair": [
+        11,
+        16
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        11,
+        17
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        11,
+        18
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        11,
+        19
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        2,
+        12
+      ]
+    },
+    {
+      "pair": [
+        11,
+        20
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        11,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        11,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        11,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        11,
+        24
+      ],
+      "kind": "successor",
+      "read": 1,
+      "pair_dependency": [
+        11,
+        23
+      ]
+    },
+    {
+      "pair": [
+        12,
+        13
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        12,
+        14
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        12,
+        15
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        12,
+        16
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        12,
+        17
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        12,
+        18
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        12,
+        19
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        12,
+        20
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        12,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        12,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        12,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        12,
+        24
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        13,
+        14
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        13,
+        15
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        13,
+        16
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        6,
+        17
+      ]
+    },
+    {
+      "pair": [
+        13,
+        17
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        13,
+        18
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        13,
+        19
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        13,
+        20
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        13,
+        21
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        6,
+        17
+      ]
+    },
+    {
+      "pair": [
+        13,
+        22
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        6,
+        23
+      ]
+    },
+    {
+      "pair": [
+        13,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        13,
+        24
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        14,
+        15
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        14,
+        16
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        14,
+        17
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        14,
+        18
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        14,
+        19
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        14,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        14,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        14,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        14,
+        24
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        15,
+        16
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        15,
+        17
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        15,
+        18
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        4,
+        19
+      ]
+    },
+    {
+      "pair": [
+        15,
+        19
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        2,
+        4
+      ]
+    },
+    {
+      "pair": [
+        15,
+        20
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        15,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        15,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        15,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        15,
+        24
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        16,
+        17
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        16,
+        18
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        16,
+        19
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        16,
+        20
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        16,
+        21
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        16,
+        22
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        16,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        16,
+        24
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        17,
+        18
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        17,
+        19
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        17,
+        20
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        17,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        17,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        17,
+        23
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        0,
+        9
+      ]
+    },
+    {
+      "pair": [
+        17,
+        24
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        18,
+        19
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        2,
+        19
+      ]
+    },
+    {
+      "pair": [
+        18,
+        20
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        18,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        18,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        18,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        18,
+        24
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        19,
+        20
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        19,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        19,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        19,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        19,
+        24
+      ],
+      "kind": "successor",
+      "read": 1,
+      "pair_dependency": [
+        19,
+        23
+      ]
+    },
+    {
+      "pair": [
+        20,
+        21
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        20,
+        22
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        20,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        20,
+        24
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        21,
+        22
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        17,
+        23
+      ]
+    },
+    {
+      "pair": [
+        21,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        21,
+        24
+      ],
+      "kind": "successor",
+      "read": 1,
+      "pair_dependency": [
+        21,
+        23
+      ]
+    },
+    {
+      "pair": [
+        22,
+        23
+      ],
+      "kind": "action",
+      "read": 0
+    },
+    {
+      "pair": [
+        22,
+        24
+      ],
+      "kind": "successor",
+      "read": 1,
+      "pair_dependency": [
+        22,
+        23
+      ]
+    },
+    {
+      "pair": [
+        23,
+        24
+      ],
+      "kind": "action",
+      "read": 1
+    },
+    {
+      "pair": [
+        0,
+        11
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        12,
+        22
+      ]
+    },
+    {
+      "pair": [
+        0,
+        19
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        2,
+        22
+      ]
+    },
+    {
+      "pair": [
+        0,
+        24
+      ],
+      "kind": "successor",
+      "read": 1,
+      "pair_dependency": [
+        1,
+        23
+      ]
+    },
+    {
+      "pair": [
+        1,
+        2
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        16,
+        20
+      ]
+    },
+    {
+      "pair": [
+        1,
+        24
+      ],
+      "kind": "successor",
+      "read": 1,
+      "pair_dependency": [
+        2,
+        23
+      ]
+    },
+    {
+      "pair": [
+        2,
+        24
+      ],
+      "kind": "successor",
+      "read": 1,
+      "pair_dependency": [
+        3,
+        23
+      ]
+    },
+    {
+      "pair": [
+        3,
+        6
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        8,
+        20
+      ]
+    },
+    {
+      "pair": [
+        4,
+        13
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        6,
+        16
+      ]
+    },
+    {
+      "pair": [
+        4,
+        16
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        16,
+        17
+      ]
+    },
+    {
+      "pair": [
+        5,
+        8
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        7,
+        9
+      ]
+    },
+    {
+      "pair": [
+        5,
+        17
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        7,
+        9
+      ]
+    },
+    {
+      "pair": [
+        6,
+        12
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        8,
+        14
+      ]
+    },
+    {
+      "pair": [
+        8,
+        17
+      ],
+      "kind": "successor",
+      "read": 1,
+      "pair_dependency": [
+        8,
+        24
+      ]
+    },
+    {
+      "pair": [
+        14,
+        20
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        15,
+        23
+      ]
+    },
+    {
+      "pair": [
+        3,
+        12
+      ],
+      "kind": "successor",
+      "read": 0,
+      "pair_dependency": [
+        14,
+        20
+      ]
+    }
+  ],
+  "incompatible_pairs": 300,
+  "quotient_scope": "State-only step-preserving quotients, same tape and head position; not a lower bound on equivalent TMs.",
+  "tape_windows": [
+    {
+      "radius": 2,
+      "configurations": 427,
+      "possible_read_masks": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "radius": 3,
+      "configurations": 1351,
+      "possible_read_masks": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "radius": 4,
+      "configurations": 4485,
+      "possible_read_masks": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "radius": 5,
+      "configurations": 14241,
+      "possible_read_masks": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "radius": 6,
+      "configurations": 46373,
+      "possible_read_masks": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    }
+  ],
+  "all_input_macro_search": [
+    {
+      "length": 3,
+      "rewrites": []
+    },
+    {
+      "length": 5,
+      "rewrites": []
+    },
+    {
+      "length": 7,
+      "rewrites": []
+    },
+    {
+      "length": 9,
+      "rewrites": []
+    },
+    {
+      "length": 11,
+      "rewrites": []
+    },
+    {
+      "length": 13,
+      "rewrites": []
+    },
+    {
+      "length": 15,
+      "rewrites": []
+    },
+    {
+      "length": 17,
+      "rewrites": []
+    },
+    {
+      "length": 19,
+      "rewrites": []
+    },
+    {
+      "length": 21,
+      "rewrites": []
+    },
+    {
+      "length": 23,
+      "rewrites": []
+    },
+    {
+      "length": 25,
+      "rewrites": []
+    },
+    {
+      "length": 27,
+      "rewrites": []
+    },
+    {
+      "length": 29,
+      "rewrites": []
+    },
+    {
+      "length": 31,
+      "rewrites": []
+    }
+  ],
+  "primality_tests": {
+    "integers": [
+      1,
+      128
+    ],
+    "contexts_per_integer": 2,
+    "cases": 256,
+    "steps": 16371996
+  },
+  "even_outer_tests": [
+    {
+      "input": 4,
+      "outcome": "next_even",
+      "steps": 87
+    },
+    {
+      "input": 6,
+      "outcome": "next_even",
+      "steps": 169
+    },
+    {
+      "input": 8,
+      "outcome": "next_even",
+      "steps": 295
+    },
+    {
+      "input": 10,
+      "outcome": "next_even",
+      "steps": 505
+    },
+    {
+      "input": 12,
+      "outcome": "next_even",
+      "steps": 887
+    },
+    {
+      "input": 14,
+      "outcome": "next_even",
+      "steps": 1275
+    },
+    {
+      "input": 16,
+      "outcome": "next_even",
+      "steps": 1897
+    },
+    {
+      "input": 18,
+      "outcome": "next_even",
+      "steps": 2645
+    },
+    {
+      "input": 20,
+      "outcome": "next_even",
+      "steps": 3717
+    },
+    {
+      "input": 22,
+      "outcome": "next_even",
+      "steps": 4975
+    },
+    {
+      "input": 24,
+      "outcome": "next_even",
+      "steps": 6233
+    },
+    {
+      "input": 26,
+      "outcome": "next_even",
+      "steps": 8315
+    },
+    {
+      "input": 28,
+      "outcome": "next_even",
+      "steps": 11187
+    },
+    {
+      "input": 30,
+      "outcome": "next_even",
+      "steps": 13241
+    },
+    {
+      "input": 32,
+      "outcome": "next_even",
+      "steps": 15803
+    },
+    {
+      "input": 34,
+      "outcome": "next_even",
+      "steps": 19073
+    },
+    {
+      "input": 36,
+      "outcome": "next_even",
+      "steps": 21783
+    },
+    {
+      "input": 38,
+      "outcome": "next_even",
+      "steps": 27311
+    },
+    {
+      "input": 40,
+      "outcome": "next_even",
+      "steps": 31519
+    },
+    {
+      "input": 42,
+      "outcome": "next_even",
+      "steps": 35171
+    },
+    {
+      "input": 44,
+      "outcome": "next_even",
+      "steps": 42255
+    },
+    {
+      "input": 46,
+      "outcome": "next_even",
+      "steps": 48469
+    },
+    {
+      "input": 48,
+      "outcome": "next_even",
+      "steps": 53207
+    },
+    {
+      "input": 50,
+      "outcome": "next_even",
+      "steps": 62621
+    },
+    {
+      "input": 52,
+      "outcome": "next_even",
+      "steps": 77393
+    },
+    {
+      "input": 54,
+      "outcome": "next_even",
+      "steps": 83503
+    },
+    {
+      "input": 56,
+      "outcome": "next_even",
+      "steps": 88741
+    },
+    {
+      "input": 58,
+      "outcome": "next_even",
+      "steps": 101569
+    },
+    {
+      "input": 60,
+      "outcome": "next_even",
+      "steps": 109053
+    },
+    {
+      "input": 62,
+      "outcome": "next_even",
+      "steps": 121255
+    },
+    {
+      "input": 64,
+      "outcome": "next_even",
+      "steps": 133713
+    }
+  ],
+  "synthetic_no_pair_odd_tests": [
+    {
+      "input": 11,
+      "outcome": "halt",
+      "steps": 1099
+    },
+    {
+      "input": 17,
+      "outcome": "halt",
+      "steps": 4981
+    },
+    {
+      "input": 23,
+      "outcome": "halt",
+      "steps": 15097
+    },
+    {
+      "input": 27,
+      "outcome": "halt",
+      "steps": 28157
+    },
+    {
+      "input": 29,
+      "outcome": "halt",
+      "steps": 30115
+    },
+    {
+      "input": 35,
+      "outcome": "halt",
+      "steps": 68383
+    },
+    {
+      "input": 37,
+      "outcome": "halt",
+      "steps": 78219
+    },
+    {
+      "input": 41,
+      "outcome": "halt",
+      "steps": 112739
+    },
+    {
+      "input": 47,
+      "outcome": "halt",
+      "steps": 209519
+    },
+    {
+      "input": 51,
+      "outcome": "halt",
+      "steps": 298885
+    },
+    {
+      "input": 53,
+      "outcome": "halt",
+      "steps": 299935
+    },
+    {
+      "input": 57,
+      "outcome": "halt",
+      "steps": 410887
+    },
+    {
+      "input": 59,
+      "outcome": "halt",
+      "steps": 417605
+    }
+  ],
+  "verification": "Computational audit of the pinned 25-state table; independent of the current 24-state Lean proof."
+}
