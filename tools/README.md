@@ -14,7 +14,11 @@
 
 - `search23.py` / `search23.cpp`: merge states of the current machine and repair
   one or two transitions, pruning with failing execution traces. Optional Z3 mode
-  searches larger repair sets and records budgets, UNSAT and UNKNOWN separately.
+  searches larger repair sets, permits whole-fragment synthesis with changed
+  internal primality/pair conventions, and records budgets, UNSAT and UNKNOWN
+  separately. Initialization can reach a later even boundary under independently
+  enlarged tape/step bounds. Such a candidate still needs an unbounded Lean proof
+  and proofs of all skipped even instances.
 - `phase_screen.hpp`: shared native interpreter and first-boundary checks used by
   both search programs. It is tested against explicit corruptions and the Python
   interpreter.

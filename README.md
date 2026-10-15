@@ -46,11 +46,13 @@ and the upstream [Apache-2.0 license](LICENSE).
 | Whole-number phase checks | 63 even inputs; 13 synthetic odd no-pair inputs |
 | Blank-tape simulation | 1,000,000 steps |
 | 23-state local repair search | 552 ordered pairs; up to two repairs; no finite survivors |
-| Regression tests | 27 passed |
+| Regression tests | 29 passed |
 
 The current verified result remains 24 states. The [23-state search](docs/SEARCH.md)
 adds trace-guided transition repair and an optional constraint solver; no smaller
-machine has been accepted.
+machine has been accepted. Broader startup through even 256, changed internal
+primality/pair conventions, and complete fragment resynthesis have also produced
+no accepted replacement; the saved results describe each bounded search's scope.
 
 Synthetic odd inputs exercise the halting path; they are not Goldbach
 counterexamples on the blank-tape run. Finite tests screen candidates. The Lean

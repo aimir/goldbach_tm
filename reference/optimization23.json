@@ -1,13 +1,13 @@
 {
-  "date": "2026-10-08",
+  "date": "2026-10-15",
   "accepted_states": 24,
   "base_table": "machines/goldbach24.tm",
   "base_table_sha256": "f21db55745ed43333cc753861ce8509244884b030e74ff57436673ffa77265b6",
   "outcome": "No smaller machine accepted. The 24-state machine and all proof-pinned sources are unchanged.",
   "source_sha256": {
-    "tools/search23.cpp": "5bc769901153d8df06ce6fbd4317d76afbeabc8cbed0654a8c5066571a5d2bf1",
-    "tools/phase_screen.hpp": "69b5c17934a9853b7fb17a1e742d3e3033d9c543040d31068351086af97ce0d2",
-    "tools/search23.py": "7f3778ca33d379eeaca578b3c59a3729e6211682b989f922082c6339875253bc",
+    "tools/search23.cpp": "a54e8bc7606f290e1a57afc401d405fe38b88949b2808b3541735e7c48212f8d",
+    "tools/phase_screen.hpp": "360e59abf9b8efb95ba48024629a6a528bd265045a5a8c43cb5afdb7285cead7",
+    "tools/search23.py": "cfdece65c2c4cf15ccbc61d4ceaa161343172278b83b60a08c8daba1d903c8ca",
     "tools/search_scans.py": "d8f7c99bf411ee3257addf8611184e54aeaf585c83e382ec4ee7500002e0a0e5"
   },
   "runs": [
@@ -104,14 +104,467 @@
       },
       "finite_survivors": 0,
       "non_budget_results": []
+    },
+    {
+      "run": "search23-broad-one-final",
+      "settings": {
+        "method": "repair",
+        "groups": "all",
+        "repairs": 1,
+        "merge_pairs": null,
+        "editable_states": null,
+        "pairs_only": false,
+        "whole_phase_only": false,
+        "phase_factor": 3,
+        "outer_through": 0,
+        "input_sha256": "04fe0e944f77909fc9b5944ab52b934e6bb83e814972f62fe025075b42529bc4",
+        "source_sha256": {
+          "search23.cpp": "a54e8bc7606f290e1a57afc401d405fe38b88949b2808b3541735e7c48212f8d",
+          "phase_screen.hpp": "360e59abf9b8efb95ba48024629a6a528bd265045a5a8c43cb5afdb7285cead7",
+          "search23.py": "cfdece65c2c4cf15ccbc61d4ceaa161343172278b83b60a08c8daba1d903c8ca",
+          "search_scans.py": "d8f7c99bf411ee3257addf8611184e54aeaf585c83e382ec4ee7500002e0a0e5"
+        },
+        "bootstrap": {
+          "steps": 1000000,
+          "max_even": 256,
+          "tape_cells": 32768,
+          "max_ones": 2048
+        },
+        "scope": "Bounded fixtures and fixed phase interfaces; no lower bound or correctness proof. Later bootstrap boundaries require proof of skipped even cases."
+      },
+      "complete": true,
+      "summary": {
+        "ordered_pairs": 552,
+        "repairs": 1,
+        "evaluations": 847044,
+        "simulated_steps": 227676528,
+        "fixtures": 51,
+        "arithmetic_passes": 0,
+        "bootstrap_attempts": 0,
+        "distinct_finite_survivors": 0
+      }
+    },
+    {
+      "run": "search23-broad-two",
+      "settings": {
+        "method": "repair",
+        "groups": "all",
+        "repairs": 2,
+        "pairs_only": false,
+        "input_sha256": "04fe0e944f77909fc9b5944ab52b934e6bb83e814972f62fe025075b42529bc4",
+        "source_sha256": {
+          "search23.cpp": "d9f8f7a6097a983c3d720eec54ec81133a9fdebc3a2be7b906b7c6be611f8f40",
+          "phase_screen.hpp": "69b5c17934a9853b7fb17a1e742d3e3033d9c543040d31068351086af97ce0d2",
+          "search23.py": "76214c4db9603949e64c5cdf8a0a19b71e64c654a7dac2356cc4a1245c8be3de",
+          "search_scans.py": "d8f7c99bf411ee3257addf8611184e54aeaf585c83e382ec4ee7500002e0a0e5"
+        },
+        "bootstrap": {
+          "steps": 1000000,
+          "max_even": 256,
+          "tape_cells": 32768,
+          "max_ones": 2048
+        },
+        "scope": "Bounded fixtures and fixed phase interfaces; no lower bound or correctness proof. Later bootstrap boundaries require proof of skipped even cases."
+      },
+      "complete": true,
+      "summary": {
+        "ordered_pairs": 552,
+        "repairs": 2,
+        "evaluations": 1243956932,
+        "simulated_steps": 173213658361,
+        "fixtures": 51,
+        "distinct_finite_survivors": 0
+      }
+    },
+    {
+      "run": "search23-fused-eight",
+      "settings": {
+        "method": "solver",
+        "groups": "scans",
+        "repairs": 8,
+        "pairs_only": false,
+        "whole_phase_only": true,
+        "phase_factor": 12,
+        "outer_through": 64,
+        "input_sha256": "05d7f904711c565f7f845242af6139514bb71cd5407ea332ab54b06b48d0416e",
+        "source_sha256": {
+          "search23.cpp": "d9f8f7a6097a983c3d720eec54ec81133a9fdebc3a2be7b906b7c6be611f8f40",
+          "phase_screen.hpp": "360e59abf9b8efb95ba48024629a6a528bd265045a5a8c43cb5afdb7285cead7",
+          "search23.py": "752e142579cb844e6709b76cf38743c6208fff780805a0588fe17aeb7a6190ad",
+          "search_scans.py": "d8f7c99bf411ee3257addf8611184e54aeaf585c83e382ec4ee7500002e0a0e5"
+        },
+        "bootstrap": {
+          "steps": 1000000,
+          "max_even": 256,
+          "tape_cells": 32768,
+          "max_ones": 2048
+        },
+        "scope": "Bounded fixtures and fixed phase interfaces; no lower bound or correctness proof. Later bootstrap boundaries require proof of skipped even cases."
+      },
+      "complete": true,
+      "ordered_pairs": 42,
+      "checked_tables": 126000,
+      "pair_status_counts": {
+        "budget": 42
+      },
+      "finite_survivors": 0,
+      "pair_results": [
+        {
+          "removed": 14,
+          "merged_into": 13,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 22,
+          "merged_into": 18,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 19,
+          "merged_into": 11,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 7,
+          "merged_into": 5,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 16,
+          "merged_into": 22,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 20,
+          "merged_into": 22,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 13,
+          "merged_into": 18,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 16,
+          "merged_into": 14,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 14,
+          "merged_into": 20,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 5,
+          "merged_into": 7,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 21,
+          "merged_into": 11,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 22,
+          "merged_into": 14,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 8,
+          "merged_into": 7,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 13,
+          "merged_into": 22,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 18,
+          "merged_into": 20,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 13,
+          "merged_into": 20,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 16,
+          "merged_into": 18,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 20,
+          "merged_into": 16,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 13,
+          "merged_into": 16,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 14,
+          "merged_into": 22,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 20,
+          "merged_into": 14,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 7,
+          "merged_into": 8,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 20,
+          "merged_into": 18,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 20,
+          "merged_into": 13,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 16,
+          "merged_into": 13,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 18,
+          "merged_into": 14,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 22,
+          "merged_into": 20,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 18,
+          "merged_into": 13,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 5,
+          "merged_into": 8,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 16,
+          "merged_into": 20,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 21,
+          "merged_into": 19,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 14,
+          "merged_into": 18,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 13,
+          "merged_into": 14,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 11,
+          "merged_into": 19,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 8,
+          "merged_into": 5,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 22,
+          "merged_into": 16,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 18,
+          "merged_into": 16,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 22,
+          "merged_into": 13,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 19,
+          "merged_into": 21,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 11,
+          "merged_into": 21,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 18,
+          "merged_into": 22,
+          "checks": 3000,
+          "status": "budget"
+        },
+        {
+          "removed": 14,
+          "merged_into": 16,
+          "checks": 3000,
+          "status": "budget"
+        }
+      ]
+    },
+    {
+      "run": "search23-fragment-free",
+      "settings": {
+        "method": "solver",
+        "groups": "scans",
+        "repairs": 36,
+        "merge_pairs": [
+          [
+            14,
+            13
+          ],
+          [
+            8,
+            7
+          ],
+          [
+            5,
+            7
+          ]
+        ],
+        "editable_states": [
+          0,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          22
+        ],
+        "pairs_only": false,
+        "whole_phase_only": true,
+        "phase_factor": 12,
+        "outer_through": 64,
+        "input_sha256": "05d7f904711c565f7f845242af6139514bb71cd5407ea332ab54b06b48d0416e",
+        "source_sha256": {
+          "search23.cpp": "a54e8bc7606f290e1a57afc401d405fe38b88949b2808b3541735e7c48212f8d",
+          "phase_screen.hpp": "360e59abf9b8efb95ba48024629a6a528bd265045a5a8c43cb5afdb7285cead7",
+          "search23.py": "cfdece65c2c4cf15ccbc61d4ceaa161343172278b83b60a08c8daba1d903c8ca",
+          "search_scans.py": "d8f7c99bf411ee3257addf8611184e54aeaf585c83e382ec4ee7500002e0a0e5"
+        },
+        "bootstrap": {
+          "steps": 1000000,
+          "max_even": 256,
+          "tape_cells": 32768,
+          "max_ones": 2048
+        },
+        "scope": "Bounded fixtures and fixed phase interfaces; no lower bound or correctness proof. Later bootstrap boundaries require proof of skipped even cases."
+      },
+      "complete": true,
+      "ordered_pairs": 3,
+      "checked_tables": 30000,
+      "pair_status_counts": {
+        "budget": 3
+      },
+      "finite_survivors": 0,
+      "pair_results": [
+        {
+          "removed": 14,
+          "merged_into": 13,
+          "checks": 10000,
+          "status": "budget",
+          "furthest_fixture": 7,
+          "bootstrap_rejections": 0
+        },
+        {
+          "removed": 5,
+          "merged_into": 7,
+          "checks": 10000,
+          "status": "budget",
+          "furthest_fixture": 7,
+          "bootstrap_rejections": 0
+        },
+        {
+          "removed": 8,
+          "merged_into": 7,
+          "checks": 10000,
+          "status": "budget",
+          "furthest_fixture": 7,
+          "bootstrap_rejections": 0
+        }
+      ]
     }
   ],
   "validation": {
-    "regression_tests": 27,
+    "regression_tests": 29,
     "baseline_search_survivors": 7,
     "independent_24_state_report": "unchanged",
     "baseline_audit_report": "unchanged",
-    "formal_source_and_table_hashes": "all match reference/proof24.json"
+    "formal_source_and_table_hashes": "all match reference/proof24.json",
+    "formal_build_2026_10_15": "Serial module builds, default lake build, and headline axiom check passed on the pinned toolchain."
   },
-  "scope": "Finite phase contracts, bounded runs and startup at 4. Counts include repeated tables. Solver budget/unknown is inconclusive; UNSAT would concern only the finite encoded problem. No lower bound on equivalent Turing machines."
+  "scope": "Bounded phase contracts and transition families; broader runs permit later startup and changed internal primality/pair interfaces. Outer tape representation remains fixed. Counts include repeated tables. Solver budget/unknown is inconclusive; no lower bound or unbounded correctness follows from finite search."
 }

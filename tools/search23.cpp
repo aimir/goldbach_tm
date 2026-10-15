@@ -12,6 +12,45 @@
 static Machine baseline;
 static std::vector<Fixture> fixtures;
 static unsigned long long evaluations = 0;
+static unsigned long long arithmetic_passes = 0, bootstrap_attempts = 0;
+
+#ifndef BOOTSTRAP_STEPS
+#define BOOTSTRAP_STEPS 235
+#endif
+#ifndef BOOTSTRAP_MAX_EVEN
+#define BOOTSTRAP_MAX_EVEN 4
+#endif
+#ifndef BOOTSTRAP_TAPE
+#define BOOTSTRAP_TAPE 1024
+#endif
+#ifndef BOOTSTRAP_MAX_ONES
+#define BOOTSTRAP_MAX_ONES 12
+#endif
+
+// Initialization has no input contract: any finite blank execution reaching an
+// even outer boundary is a proposal. A later starting boundary additionally
+// needs a proof of every skipped even case before the headline can be retained.
+static bool bootstrap(const Machine &m, int dead, int keep, int start) {
+    std::vector<unsigned char> tape(BOOTSTRAP_TAPE);
+    int h = BOOTSTRAP_TAPE/2, q = start, count = 0;
+    visited = 0;
+    for (int s = 0; s < BOOTSTRAP_STEPS; ++s) {
+        ++steps_run;
+        visited |= 1ULL << (2*q+tape[h]);
+        Edge e = m[q][tape[h]];
+        if (e.q < 0) return false;
+        count += e.w-tape[h]; tape[h] = e.w; h += e.d; q = e.q;
+        if (h < BOOTSTRAP_TAPE/8 || h >= 7*BOOTSTRAP_TAPE/8 ||
+            q == dead || count > BOOTSTRAP_MAX_ONES) return false;
+        if (q == (21 == dead ? keep : 21) && !tape[h] &&
+            count >= 4 && count <= BOOTSTRAP_MAX_EVEN && count%2 == 0 && h >= count) {
+            bool block = true;
+            for (int i = h-count; i < h; ++i) if (!tape[i]) { block = false; break; }
+            if (block) return true;
+        }
+    }
+    return false;
+}
 
 // Failure traces justify pruning: changing no visited branch repeats the failure.
 // A bootstrap failure unions all possible initial-state traces, since any one
@@ -23,10 +62,12 @@ static int failure(const Machine &m, int dead, int keep, std::uint64_t &trace) {
             return i;
         }
     }
+    ++arithmetic_passes;
     trace = 0;
     for (int start = 0; start < MACHINE_STATES; ++start) {
         if (start == dead) continue;
-        if (run(m, dead, keep, Fixture{0, 0, 0, true, 45}, 3, start)) {
+        ++bootstrap_attempts;
+        if (bootstrap(m, dead, keep, start)) {
             trace = start;
             return -1;
         }
@@ -43,15 +84,23 @@ extern "C" void initialize(const int *data, int n) {
 }
 
 // Edge 0 is HALT; other values encode target, write bit and direction.
-extern "C" int check(const int *data, int dead, int keep, std::uint64_t *trace) {
+static Machine decode_data(const int *data) {
     Machine m;
     for (int i = 0; i < 48; ++i) {
         int x = data[i];
         m[i/2][i%2] = x == 0 ? Edge{0, 0, -1} :
             Edge{((x-1)%4)/2, ((x-1)%2) ? 1 : -1, (x-1)/4};
     }
+    return m;
+}
+extern "C" int check_blank(const int *data, int dead, int keep, int start) {
+    if (start < 0 || start >= 24 || start == dead) return 0;
     steps_run = 0;
-    return failure(m, dead, keep, *trace);
+    return bootstrap(decode_data(data), dead, keep, start);
+}
+extern "C" int check(const int *data, int dead, int keep, std::uint64_t *trace) {
+    steps_run = 0;
+    return failure(decode_data(data), dead, keep, *trace);
 }
 extern "C" long long last_steps() { return steps_run; }
 
@@ -146,6 +195,7 @@ int main(int argc, char **argv) {
         return 2;
     }
     steps_run = 0;
+    arithmetic_passes = bootstrap_attempts = 0;
     std::vector<std::pair<int, int>> pairs;
     if (groups == "scans") {
         for (auto group : std::vector<std::vector<int>>{{13,14,16,18,20,22},{11,19,21},{5,7,8}})
@@ -164,7 +214,9 @@ int main(int argc, char **argv) {
     if (!report) return 2;
     report << "{\"ordered_pairs\":" << pairs.size() << ",\"repairs\":" << repairs
            << ",\"evaluations\":" << evaluations << ",\"simulated_steps\":" << steps_run
-           << ",\"fixtures\":" << total << ",\"distinct_finite_survivors\":" << found.size() << "}\n";
+           << ",\"fixtures\":" << total << ",\"arithmetic_passes\":" << arithmetic_passes
+           << ",\"bootstrap_attempts\":" << bootstrap_attempts
+           << ",\"distinct_finite_survivors\":" << found.size() << "}\n";
     std::cout << "Finished " << evaluations << " evaluations; " << found.size()
               << " distinct finite survivors." << std::endl;
 }

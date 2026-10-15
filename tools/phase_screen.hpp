@@ -6,13 +6,16 @@
 #ifndef MACHINE_STATES
 #define MACHINE_STATES 25
 #endif
+#ifndef PHASE_FACTOR
+#define PHASE_FACTOR 3
+#endif
 static_assert(MACHINE_STATES<=32, "Trace masks use two bits per state");
 struct Edge { int w,d,q; bool operator==(const Edge&o)const{return w==o.w&&d==o.d&&q==o.q;} };
 using Machine=std::array<std::array<Edge,2>,MACHINE_STATES>;
 struct Fixture {int kind,n,p;bool success;int baseline_steps;};
 static long long steps_run=0;
 static uint64_t visited;
-int run(const Machine&m,int dead,int keep,const Fixture&f,int factor=3,int start=0) {
+int run(const Machine&m,int dead,int keep,const Fixture&f,int factor=PHASE_FACTOR,int start=0) {
  visited=0;std::array<unsigned char,1024> tape{}; int h=512;int q=f.kind==0?start:f.kind==1?21:f.kind==2?0:17;int count=0;
  auto map=[&](int x){return x==dead?keep:x;};q=map(q);
  if(f.kind==1||f.kind==2){for(int i=0;i<f.n;i++)tape[512+i]=1;count=f.n;if(f.kind==1)h+=f.n;}

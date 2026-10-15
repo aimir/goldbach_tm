@@ -17,6 +17,23 @@ The four-repair solver run checked 420,000 tables. Two six-repair runs checked
 to change. None produced a finite survivor. Every state-pair run reached its
 candidate budget: these runs establish no UNSAT result for four or six repairs.
 
+The broader initialization run also completed all 552 pairs with one and two
+repairs, under one million startup steps, 32,768 cells, 2,048 ones and a permitted
+first even boundary anywhere from 4 through 256. It found zero finite survivors.
+In the one-repair run, all 847,044 candidates failed the arithmetic contracts;
+none even reached the initialization screen. Startup bounds therefore were not
+the obstruction in that family.
+
+A whole-phase search allowed eight repaired branches and changed primality/pair
+interfaces, using every outer input 4–64 and twelve times the baseline arithmetic
+time. All 42 pairs exhausted their 3,000-candidate budgets: 126,000 checks and no
+survivor. A further structural run tried deleting 14 into 13, 5 into 7, and 8 into
+7. Each could freely replace all 36 branches in the marker/primality fragment and
+its compensating callers; only states 1, 2, 3, 21 and 23 stayed fixed. All three
+exhausted 10,000-candidate budgets, with no survivor. None reached initialization;
+their longest successful fixture prefix ended before the no-pair input 11.
+These budget-limited searches establish no impossibility result.
+
 ## Search model
 
 Choose an ordered pair of states, redirect every incoming transition from the
@@ -66,11 +83,34 @@ internal primality interface while retaining pair/outer behavior. It still fixes
 the boundary tape representation. A valid machine with a different representation,
 phase structure or startup at a later verified even number could be missed.
 
+`--whole-phase-only` also drops the pair-return contracts. It permits a primality
+fragment to leave a changed tape for the pair-advance caller, and permits their
+fusion, provided the complete outer phase retains its arithmetic behavior.
+`--outer-through 64` supplies all 61 outer inputs from 4 through 64, including
+odd inputs with a prime pair as well as odd inputs without one. This prevents
+the weaker screen from accepting a simple even/odd discriminator on that range.
+The outer boundary representation remains fixed, so this is still a restricted
+search family. `--phase-factor` increases its per-fixture time allowance.
+
+The blank initialization screen now has independent configurable bounds. It can
+run through intermediate phases and accept any canonical even outer boundary
+from 4 through `--bootstrap-max-even`, from any surviving initial state. A later
+boundary is only a proposal: preserving the exact headline theorem also requires
+Lean proofs of every skipped even instance, plus exact blank initialization and
+unbounded eventual progress through the caller-compatible arithmetic phases.
+For example, starting at 10 requires proofs for 4, 6 and 8.
+
+Solver options `--merge-pair DEAD KEEP` and `--editable-states 4,5,6,7,8,9` can
+select a structural fragment and its compensating caller rows. Setting a repair
+allowance at least as large as the number of editable branches allows their
+complete resynthesis; the other rows retain the redirected quotient table.
+
 Runs use 1,024 tape cells, keep the head within indices 128–895, permit at most
 12 more ones than the fixture starts with, and allow `3 * baseline_steps + 100`
 transitions per fixture. The bootstrap budget is 235 transitions. These are search
 bounds, not assumptions of the Lean theorem. No finite fixture suite establishes
 unbounded correctness, and failure is not a lower bound on equivalent machines.
+These remain the defaults; the broader runs below explicitly replace them.
 
 ## Reproduce
 
@@ -88,6 +128,20 @@ install the `z3-solver` Python package in your preferred environment, then run:
 python3 tools/search23.py --method solver --repairs 4 --iterations 10000 --output scratch/search23-solver
 python3 tools/search23.py --method solver --repairs 6 --iterations 3000 --seed 626 --output scratch/search23-solver6
 python3 tools/search23.py --method solver --repairs 6 --iterations 3000 --seed 735 --pairs-only --output scratch/search23-pairs
+```
+
+Broaden initialization to one million steps, 32,768 tape cells and up to 2,048
+ones, accepting a canonical boundary for any even number through 256:
+
+```sh
+python3 tools/search23.py --groups all --repairs 1 --bootstrap-steps 1000000 --bootstrap-max-even 256 --bootstrap-tape 32768 --bootstrap-max-ones 2048 --output scratch/search23-broad-one
+```
+
+Allow changed internal primality/pair conventions and eight repaired branches,
+with twelve times the baseline arithmetic time and the broader initialization:
+
+```sh
+python3 tools/search23.py --method solver --repairs 8 --iterations 3000 --seed 1015 --whole-phase-only --outer-through 64 --phase-factor 12 --bootstrap-steps 1000000 --bootstrap-max-even 256 --bootstrap-tape 32768 --bootstrap-max-ones 2048 --output scratch/search23-fused-eight
 ```
 
 Output directories must be empty. Each run records input/source hashes, settings

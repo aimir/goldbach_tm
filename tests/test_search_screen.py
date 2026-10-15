@@ -13,6 +13,7 @@ from machine import ROOT, check_prime, check_outer
 from verify24 import construction, check_pair
 from search_scans import inputs
 from search23 import encode, load_screen
+from search23 import outer_fixture
 
 
 @unittest.skipUnless(shutil.which('clang++') or shutil.which('g++'), 'Needs a C++17 compiler')
@@ -26,6 +27,11 @@ class SearchScreenTests(unittest.TestCase):
         subprocess.run([compiler, '-std=c++17', '-O2', '-DSCREEN_LIBRARY', '-shared',
                         '-fPIC', str(ROOT/'tools/search23.cpp'), '-o', str(cls.library)], check=True)
         cls.machine = construction()
+        cls.broad_library = Path(cls.directory.name)/'broad-screen.so'
+        subprocess.run([compiler, '-std=c++17', '-O2', '-DSCREEN_LIBRARY', '-shared',
+                        '-fPIC', '-DBOOTSTRAP_STEPS=1000000', '-DBOOTSTRAP_MAX_EVEN=256',
+                        '-DBOOTSTRAP_TAPE=32768', '-DBOOTSTRAP_MAX_ONES=2048',
+                        str(ROOT/'tools/search23.cpp'), '-o', str(cls.broad_library)], check=True)
 
     def screen(self, machine, fixtures):
         lib = load_screen(self.library, fixtures)
@@ -43,6 +49,29 @@ class SearchScreenTests(unittest.TestCase):
         status, start, steps = self.screen(self.machine, fixtures)
         self.assertEqual((status, start), (-1, 18))
         self.assertGreater(steps, 0)
+
+    def test_later_even_blank_boundary_is_optional_and_exact(self):
+        # From this fixed initial state the first and only boundary has ten
+        # ones. Broader initialization accepts it; the legacy bound does not.
+        toy = [[[0,0,-1] for _ in range(2)] for _ in range(24)]
+        for q in range(10):
+            toy[q][0] = [1,1,q+1 if q < 9 else 21]
+        data = (ctypes.c_int*48)(*[encode(e) for row in toy for e in row])
+        def blank(library, table):
+            lib = ctypes.CDLL(str(library))
+            lib.check_blank.argtypes = [ctypes.POINTER(ctypes.c_int), ctypes.c_int,
+                                       ctypes.c_int, ctypes.c_int]
+            lib.check_blank.restype = ctypes.c_int
+            return lib.check_blank(table, -1, -1, 0)
+        self.assertEqual(blank(self.library, data), 0)
+        self.assertEqual(blank(self.broad_library, data), 1)
+        toy[4][0] = [0,1,5]  # A hole leaves an odd count and no unary boundary.
+        damaged = (ctypes.c_int*48)(*[encode(e) for row in toy for e in row])
+        self.assertEqual(blank(self.broad_library, damaged), 0)
+
+    def test_whole_phase_fixtures_include_odd_successes_and_failures(self):
+        self.assertEqual(outer_fixture(self.machine, 5)[:4], (1,5,0,1))
+        self.assertEqual(outer_fixture(self.machine, 11)[:4], (1,11,0,0))
 
     def test_repair_search_recovers_known_toy_quotient(self):
         # A four-step blank bootstrap plus a one-step nonprime return. Merging
