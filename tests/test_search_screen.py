@@ -13,7 +13,7 @@ from machine import ROOT, check_prime, check_outer
 from verify24 import construction, check_pair
 from search_scans import inputs
 from search23 import encode, load_screen
-from search23 import outer_fixture
+from search23 import diagnostics, outer_fixture
 
 
 @unittest.skipUnless(shutil.which('clang++') or shutil.which('g++'), 'Needs a C++17 compiler')
@@ -73,6 +73,20 @@ class SearchScreenTests(unittest.TestCase):
         self.assertEqual(outer_fixture(self.machine, 5)[:4], (1,5,0,1))
         self.assertEqual(outer_fixture(self.machine, 11)[:4], (1,11,0,0))
 
+    def test_original_machine_passes_proposal_diagnostics(self):
+        table = [[e or (0,0,-1) for e in row] for row in self.machine]
+        report = diagnostics(table)
+        self.assertTrue(all(not suite['failed'] for suite in report.values()))
+
+    def test_even_always_advance_proposal_retains_failure_diagnostics(self):
+        # This advances every outer input by two, including no-pair odd inputs.
+        # Even examples pass, but that supplies no unbounded arithmetic proof.
+        m = self.changed({(21,0):(1,1,0), (0,0):(1,1,21)})
+        self.assertEqual(outer_fixture(m, 128)[:4], (1,128,0,1))
+        report = diagnostics([[e or (0,0,-1) for e in row] for row in m])
+        self.assertTrue(report['original_pair_interface']['failed'])
+        self.assertTrue(any(f['input'] == 11 for f in report['odd_outer_domain']['failed']))
+
     def test_repair_search_recovers_known_toy_quotient(self):
         # A four-step blank bootstrap plus a one-step nonprime return. Merging
         # 0 into 1 breaks that return; one repaired edge and starting in 4 recover
@@ -105,6 +119,11 @@ class SearchScreenTests(unittest.TestCase):
         with self.assertRaises(AssertionError):
             check_prime(m, 1)
         self.assertEqual(self.screen(m, [(2,1,0,False,3)]), (0, 1 << 1, 1))
+
+    def test_classification_only_contract_allows_changed_return_tape(self):
+        m = self.changed({(0,1):(0,-1,16)})
+        self.assertEqual(self.screen(m, [(2,1,0,False,3)])[0], 0)
+        self.assertEqual(self.screen(m, [(4,1,0,False,3)])[:2], (-1,18))
 
     def test_first_pair_return_with_wrong_number_is_rejected(self):
         m = self.changed({(17,1):(1,-1,16), (16,0):(1,1,17)})

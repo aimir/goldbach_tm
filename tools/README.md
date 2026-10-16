@@ -19,6 +19,9 @@
   separately. Initialization can reach a later even boundary under independently
   enlarged tape/step bounds. Such a candidate still needs an unbounded Lean proof
   and proofs of all skipped even instances.
+  Even-domain mode retains separate original-interface diagnostics, with optional
+  classification-only checks that permit a changed return tape. Fixed edges can
+  impose a structural template; retained frontier tables remain unproved.
 - `phase_screen.hpp`: shared native interpreter and first-boundary checks used by
   both search programs. It is tested against explicit corruptions and the Python
   interpreter.

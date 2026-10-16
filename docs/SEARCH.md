@@ -20,9 +20,9 @@ candidate budget: these runs establish no UNSAT result for four or six repairs.
 The broader initialization run also completed all 552 pairs with one and two
 repairs, under one million startup steps, 32,768 cells, 2,048 ones and a permitted
 first even boundary anywhere from 4 through 256. It found zero finite survivors.
-In the one-repair run, all 847,044 candidates failed the arithmetic contracts;
-none even reached the initialization screen. Startup bounds therefore were not
-the obstruction in that family.
+All 847,044 one-repair and 1,243,956,932 two-repair candidates failed the arithmetic
+contracts; none reached the initialization screen. Startup bounds therefore were
+not the obstruction in either family.
 
 A whole-phase search allowed eight repaired branches and changed primality/pair
 interfaces, using every outer input 4–64 and twelve times the baseline arithmetic
@@ -33,6 +33,24 @@ its compensating callers; only states 1, 2, 3, 21 and 23 stayed fixed. All three
 exhausted 10,000-candidate budgets, with no survivor. None reached initialization;
 their longest successful fixture prefix ended before the no-pair input 11.
 These budget-limited searches establish no impossibility result.
+
+An even-domain run retained twelve finite proposals after 2,455 solver models.
+Most advance the outer number in four or six transitions for every tested input,
+without performing the required arithmetic search. Recovered frontiers first
+rejected at odd input 11 also passed every even input 4–128, but their boundary
+times were constant at 10, 14 or 104 steps on inputs 4, 128 and 256. These tables
+were retained and reviewed rather than rejected solely for odd-input behavior;
+none supplies an unbounded reduction proof. Adding optional odd/2 classification
+tests with free return tape produced zero survivors in 60,000 models over the
+three fragment deletions. Those runs were budget-limited.
+
+A separate structural template shares states 3 and 12, whose write bits and
+directions agree on both branches. Two setup rewrites reproduce the old state-10
+configuration in eight rather than ten steps for every initial primality input
+at least four. This initial identity is insufficient: trial-divisor initialization
+also enters that fragment. A seven-rewrite prototype restoring tiny inputs and
+blank startup first misclassifies 11, where an internal marker stops the reused
+eraser early. Any accepted construction must repair and prove that entire loop.
 
 ## Search model
 
@@ -92,6 +110,22 @@ the weaker screen from accepting a simple even/odd discriminator on that range.
 The outer boundary representation remains fixed, so this is still a restricted
 search family. `--phase-factor` increases its per-fixture time allowance.
 
+Odd outer inputs are unreachable in the blank-tape Goldbach run. Their behavior
+is a useful diagnostic, but requiring it can exclude a correct specialization to
+even inputs. `--whole-phase-only --even-only` screens the reachable outer domain
+and saves proposed machines with separate primality, pair and odd-input diagnostic
+results. `--save-frontier` also retains the longest successful fixture prefix per
+state pair, including tables first rejected on an unreachable odd input. These
+files are explicitly marked unproved. A machine that always adds two can pass
+every tested even instance, so this mode supplies no arithmetic correctness claim.
+
+`--odd-classification` adds optional result-only tests for odd primality inputs
+and 2. Unlike the original primality interface, these allow the return tape to
+change and the head to return farther left, so the caller may consume a modified
+layout. The prime/nonprime flags remain mapped states 20/16. This guides synthesis
+away from trivial always-advance proposals while retaining another restricted
+interface family; it is not a requirement of the headline theorem.
+
 The blank initialization screen now has independent configurable bounds. It can
 run through intermediate phases and accept any canonical even outer boundary
 from 4 through `--bootstrap-max-even`, from any surviving initial state. A later
@@ -99,6 +133,11 @@ boundary is only a proposal: preserving the exact headline theorem also requires
 Lean proofs of every skipped even instance, plus exact blank initialization and
 unbounded eventual progress through the caller-compatible arithmetic phases.
 For example, starting at 10 requires proofs for 4, 6 and 8.
+The default-build [finite-prefix proof](../formal/GoldbachTm/FinitePrefix.lean)
+now supplies all even cases 4–256 and an exact tail-counterexample equivalence,
+including the specialization to startup at 10. It supplies the skipped arithmetic
+cases, while a replacement would still need its actual blank execution and
+unbounded arithmetic/progress proofs.
 
 Solver options `--merge-pair DEAD KEEP` and `--editable-states 4,5,6,7,8,9` can
 select a structural fragment and its compensating caller rows. Setting a repair
@@ -142,6 +181,13 @@ with twelve times the baseline arithmetic time and the broader initialization:
 
 ```sh
 python3 tools/search23.py --method solver --repairs 8 --iterations 3000 --seed 1015 --whole-phase-only --outer-through 64 --phase-factor 12 --bootstrap-steps 1000000 --bootstrap-max-even 256 --bootstrap-tape 32768 --bootstrap-max-ones 2048 --output scratch/search23-fused-eight
+```
+
+For even-domain proposals with changed return tape, retain four proposals per
+pair and apply the optional odd/2 classification guide:
+
+```sh
+python3 tools/search23.py --method solver --repairs 12 --merge-pair 14 13 --merge-pair 8 7 --merge-pair 5 7 --iterations 20000 --seed 1018 --whole-phase-only --even-only --odd-classification --outer-through 128 --phase-factor 12 --save-frontier --max-survivors 12 --survivors-per-pair 4 --bootstrap-steps 1000000 --bootstrap-max-even 256 --bootstrap-tape 32768 --bootstrap-max-ones 2048 --output scratch/search23-even-classification
 ```
 
 Output directories must be empty. Each run records input/source hashes, settings

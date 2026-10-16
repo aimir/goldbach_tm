@@ -1,13 +1,13 @@
 {
-  "date": "2026-10-15",
+  "date": "2026-10-16",
   "accepted_states": 24,
   "base_table": "machines/goldbach24.tm",
   "base_table_sha256": "f21db55745ed43333cc753861ce8509244884b030e74ff57436673ffa77265b6",
-  "outcome": "No smaller machine accepted. The 24-state machine and all proof-pinned sources are unchanged.",
+  "outcome": "No smaller machine accepted. The literal 24-state table and headline statement are unchanged. A default-build finite-prefix proof supports later verified initialization.",
   "source_sha256": {
     "tools/search23.cpp": "a54e8bc7606f290e1a57afc401d405fe38b88949b2808b3541735e7c48212f8d",
-    "tools/phase_screen.hpp": "360e59abf9b8efb95ba48024629a6a528bd265045a5a8c43cb5afdb7285cead7",
-    "tools/search23.py": "cfdece65c2c4cf15ccbc61d4ceaa161343172278b83b60a08c8daba1d903c8ca",
+    "tools/phase_screen.hpp": "d2cf64b7e67135a878c9a7b85620d277dcfe8a66ad4afc46cdf29ed2e3d0085b",
+    "tools/search23.py": "398c06f6048abca0ddedd1783747107b2a408abcfffef75aeb9f80208c555578",
     "tools/search_scans.py": "d8f7c99bf411ee3257addf8611184e54aeaf585c83e382ec4ee7500002e0a0e5"
   },
   "runs": [
@@ -207,261 +207,7 @@
       "pair_status_counts": {
         "budget": 42
       },
-      "finite_survivors": 0,
-      "pair_results": [
-        {
-          "removed": 14,
-          "merged_into": 13,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 22,
-          "merged_into": 18,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 19,
-          "merged_into": 11,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 7,
-          "merged_into": 5,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 16,
-          "merged_into": 22,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 20,
-          "merged_into": 22,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 13,
-          "merged_into": 18,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 16,
-          "merged_into": 14,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 14,
-          "merged_into": 20,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 5,
-          "merged_into": 7,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 21,
-          "merged_into": 11,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 22,
-          "merged_into": 14,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 8,
-          "merged_into": 7,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 13,
-          "merged_into": 22,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 18,
-          "merged_into": 20,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 13,
-          "merged_into": 20,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 16,
-          "merged_into": 18,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 20,
-          "merged_into": 16,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 13,
-          "merged_into": 16,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 14,
-          "merged_into": 22,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 20,
-          "merged_into": 14,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 7,
-          "merged_into": 8,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 20,
-          "merged_into": 18,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 20,
-          "merged_into": 13,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 16,
-          "merged_into": 13,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 18,
-          "merged_into": 14,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 22,
-          "merged_into": 20,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 18,
-          "merged_into": 13,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 5,
-          "merged_into": 8,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 16,
-          "merged_into": 20,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 21,
-          "merged_into": 19,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 14,
-          "merged_into": 18,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 13,
-          "merged_into": 14,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 11,
-          "merged_into": 19,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 8,
-          "merged_into": 5,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 22,
-          "merged_into": 16,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 18,
-          "merged_into": 16,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 22,
-          "merged_into": 13,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 19,
-          "merged_into": 21,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 11,
-          "merged_into": 21,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 18,
-          "merged_into": 22,
-          "checks": 3000,
-          "status": "budget"
-        },
-        {
-          "removed": 14,
-          "merged_into": 16,
-          "checks": 3000,
-          "status": "budget"
-        }
-      ]
+      "finite_survivors": 0
     },
     {
       "run": "search23-fragment-free",
@@ -556,15 +302,368 @@
           "bootstrap_rejections": 0
         }
       ]
+    },
+    {
+      "run": "search23-broad-two-final",
+      "settings": {
+        "method": "repair",
+        "groups": "all",
+        "repairs": 2,
+        "merge_pairs": null,
+        "editable_states": null,
+        "pairs_only": false,
+        "whole_phase_only": false,
+        "phase_factor": 3,
+        "outer_through": 0,
+        "input_sha256": "04fe0e944f77909fc9b5944ab52b934e6bb83e814972f62fe025075b42529bc4",
+        "source_sha256": {
+          "search23.cpp": "a54e8bc7606f290e1a57afc401d405fe38b88949b2808b3541735e7c48212f8d",
+          "phase_screen.hpp": "360e59abf9b8efb95ba48024629a6a528bd265045a5a8c43cb5afdb7285cead7",
+          "search23.py": "cfdece65c2c4cf15ccbc61d4ceaa161343172278b83b60a08c8daba1d903c8ca",
+          "search_scans.py": "d8f7c99bf411ee3257addf8611184e54aeaf585c83e382ec4ee7500002e0a0e5"
+        },
+        "bootstrap": {
+          "steps": 1000000,
+          "max_even": 256,
+          "tape_cells": 32768,
+          "max_ones": 2048
+        },
+        "scope": "Bounded fixtures and fixed phase interfaces; no lower bound or correctness proof. Later bootstrap boundaries require proof of skipped even cases."
+      },
+      "complete": true,
+      "summary": {
+        "ordered_pairs": 552,
+        "repairs": 2,
+        "evaluations": 1243956932,
+        "simulated_steps": 173213658361,
+        "fixtures": 51,
+        "arithmetic_passes": 0,
+        "bootstrap_attempts": 0,
+        "distinct_finite_survivors": 0
+      }
+    },
+    {
+      "run": "search23-fused-eight-final",
+      "settings": {
+        "method": "solver",
+        "groups": "scans",
+        "repairs": 8,
+        "merge_pairs": null,
+        "editable_states": null,
+        "pairs_only": false,
+        "whole_phase_only": true,
+        "phase_factor": 12,
+        "outer_through": 64,
+        "input_sha256": "05d7f904711c565f7f845242af6139514bb71cd5407ea332ab54b06b48d0416e",
+        "source_sha256": {
+          "search23.cpp": "a54e8bc7606f290e1a57afc401d405fe38b88949b2808b3541735e7c48212f8d",
+          "phase_screen.hpp": "360e59abf9b8efb95ba48024629a6a528bd265045a5a8c43cb5afdb7285cead7",
+          "search23.py": "cfdece65c2c4cf15ccbc61d4ceaa161343172278b83b60a08c8daba1d903c8ca",
+          "search_scans.py": "d8f7c99bf411ee3257addf8611184e54aeaf585c83e382ec4ee7500002e0a0e5"
+        },
+        "bootstrap": {
+          "steps": 1000000,
+          "max_even": 256,
+          "tape_cells": 32768,
+          "max_ones": 2048
+        },
+        "scope": "Bounded fixtures and fixed phase interfaces; no lower bound or correctness proof. Later bootstrap boundaries require proof of skipped even cases."
+      },
+      "complete": true,
+      "ordered_pairs": 42,
+      "checked_tables": 126000,
+      "pair_status_counts": {
+        "budget": 42
+      },
+      "finite_survivors": 0,
+      "bootstrap_rejections": 0
+    },
+    {
+      "run": "search23-even-twelve-b",
+      "settings": {
+        "method": "solver",
+        "groups": "scans",
+        "repairs": 12,
+        "merge_pairs": [
+          [
+            14,
+            13
+          ],
+          [
+            8,
+            7
+          ],
+          [
+            5,
+            7
+          ]
+        ],
+        "editable_states": null,
+        "pairs_only": false,
+        "whole_phase_only": true,
+        "phase_factor": 12,
+        "outer_through": 128,
+        "even_only": true,
+        "max_survivors": 12,
+        "input_sha256": "6ca92228509f0dee503017fbd3ab1786fe70ed479b7d79df4deba8ca7a49d4a3",
+        "source_sha256": {
+          "search23.cpp": "a54e8bc7606f290e1a57afc401d405fe38b88949b2808b3541735e7c48212f8d",
+          "phase_screen.hpp": "360e59abf9b8efb95ba48024629a6a528bd265045a5a8c43cb5afdb7285cead7",
+          "search23.py": "2bdc2abd5124daf03d795637738341820dc27140c5524fb95cc5c66ac9c5b316",
+          "search_scans.py": "d8f7c99bf411ee3257addf8611184e54aeaf585c83e382ec4ee7500002e0a0e5"
+        },
+        "bootstrap": {
+          "steps": 1000000,
+          "max_even": 256,
+          "tape_cells": 32768,
+          "max_ones": 2048
+        },
+        "scope": "Bounded fixtures and fixed phase interfaces; no lower bound or correctness proof. Later bootstrap boundaries require proof of skipped even cases."
+      },
+      "complete": true,
+      "ordered_pairs": 1,
+      "checked_tables": 2455,
+      "pair_status_counts": {
+        "finite_survivor": 1
+      },
+      "finite_survivors": 12,
+      "pair_results": [
+        {
+          "removed": 14,
+          "merged_into": 13,
+          "checks": 2455,
+          "status": "finite_survivor",
+          "furthest_fixture": 1,
+          "bootstrap_rejections": 0
+        }
+      ],
+      "review": "Twelve unproved finite proposals. Most use constant 4/6-step +2 outer loops; the two longer proposals also lack an unbounded arithmetic reduction."
+    },
+    {
+      "run": "search23-even-classification",
+      "settings": {
+        "method": "solver",
+        "groups": "scans",
+        "repairs": 12,
+        "merge_pairs": [
+          [
+            14,
+            13
+          ],
+          [
+            8,
+            7
+          ],
+          [
+            5,
+            7
+          ]
+        ],
+        "editable_states": null,
+        "pairs_only": false,
+        "whole_phase_only": true,
+        "phase_factor": 12,
+        "outer_through": 128,
+        "even_only": true,
+        "max_survivors": 12,
+        "odd_classification": true,
+        "survivors_per_pair": 4,
+        "input_sha256": "9d97322667129e9fc1fbd67097bf1bf6b3e2ab4acfd813cd2b70e0ca472a2ebb",
+        "source_sha256": {
+          "search23.cpp": "a54e8bc7606f290e1a57afc401d405fe38b88949b2808b3541735e7c48212f8d",
+          "phase_screen.hpp": "d2cf64b7e67135a878c9a7b85620d277dcfe8a66ad4afc46cdf29ed2e3d0085b",
+          "search23.py": "4e9029d43079fbb4bd135a8e599b52f15e180bd79010cece5ed83ce0963edb4c",
+          "search_scans.py": "d8f7c99bf411ee3257addf8611184e54aeaf585c83e382ec4ee7500002e0a0e5"
+        },
+        "bootstrap": {
+          "steps": 1000000,
+          "max_even": 256,
+          "tape_cells": 32768,
+          "max_ones": 2048
+        },
+        "scope": "Bounded fixtures and fixed phase interfaces; no lower bound or correctness proof. Later bootstrap boundaries require proof of skipped even cases."
+      },
+      "complete": true,
+      "ordered_pairs": 3,
+      "checked_tables": 60000,
+      "pair_status_counts": {
+        "budget": 3
+      },
+      "finite_survivors": 0,
+      "pair_results": [
+        {
+          "removed": 14,
+          "merged_into": 13,
+          "checks": 20000,
+          "status": "budget",
+          "finite_survivors": 0,
+          "furthest_fixture": 5,
+          "bootstrap_rejections": 0
+        },
+        {
+          "removed": 5,
+          "merged_into": 7,
+          "checks": 20000,
+          "status": "budget",
+          "finite_survivors": 0,
+          "furthest_fixture": 8,
+          "bootstrap_rejections": 0
+        },
+        {
+          "removed": 8,
+          "merged_into": 7,
+          "checks": 20000,
+          "status": "budget",
+          "finite_survivors": 0,
+          "furthest_fixture": 7,
+          "bootstrap_rejections": 0
+        }
+      ]
+    },
+    {
+      "run": "search23-fragment-frontiers",
+      "settings": {
+        "method": "solver",
+        "groups": "scans",
+        "repairs": 36,
+        "merge_pairs": [
+          [
+            14,
+            13
+          ],
+          [
+            8,
+            7
+          ],
+          [
+            5,
+            7
+          ]
+        ],
+        "editable_states": [
+          0,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          22
+        ],
+        "pairs_only": false,
+        "whole_phase_only": true,
+        "phase_factor": 12,
+        "outer_through": 64,
+        "even_only": false,
+        "max_survivors": 1,
+        "odd_classification": false,
+        "survivors_per_pair": 1,
+        "input_sha256": "05d7f904711c565f7f845242af6139514bb71cd5407ea332ab54b06b48d0416e",
+        "source_sha256": {
+          "search23.cpp": "a54e8bc7606f290e1a57afc401d405fe38b88949b2808b3541735e7c48212f8d",
+          "phase_screen.hpp": "d2cf64b7e67135a878c9a7b85620d277dcfe8a66ad4afc46cdf29ed2e3d0085b",
+          "search23.py": "4e9029d43079fbb4bd135a8e599b52f15e180bd79010cece5ed83ce0963edb4c",
+          "search_scans.py": "d8f7c99bf411ee3257addf8611184e54aeaf585c83e382ec4ee7500002e0a0e5"
+        },
+        "bootstrap": {
+          "steps": 1000000,
+          "max_even": 256,
+          "tape_cells": 32768,
+          "max_ones": 2048
+        },
+        "scope": "Bounded fixtures and fixed phase interfaces; no lower bound or correctness proof. Later bootstrap boundaries require proof of skipped even cases."
+      },
+      "complete": true,
+      "ordered_pairs": 3,
+      "checked_tables": 30000,
+      "pair_status_counts": {
+        "budget": 3
+      },
+      "finite_survivors": 0,
+      "pair_results": [
+        {
+          "removed": 14,
+          "merged_into": 13,
+          "checks": 10000,
+          "status": "budget",
+          "finite_survivors": 0,
+          "furthest_fixture": 7,
+          "bootstrap_rejections": 0
+        },
+        {
+          "removed": 5,
+          "merged_into": 7,
+          "checks": 10000,
+          "status": "budget",
+          "finite_survivors": 0,
+          "furthest_fixture": 7,
+          "bootstrap_rejections": 0
+        },
+        {
+          "removed": 8,
+          "merged_into": 7,
+          "checks": 10000,
+          "status": "budget",
+          "finite_survivors": 0,
+          "furthest_fixture": 7,
+          "bootstrap_rejections": 0
+        }
+      ],
+      "review": [
+        {
+          "frontier": "frontier-5-7.json",
+          "first_failed_outer_input": 11,
+          "all_evens_4_through_128": "pass",
+          "outer_steps_on_4_128_256": [
+            10,
+            10,
+            10
+          ],
+          "proof_status": "unproved"
+        },
+        {
+          "frontier": "frontier-14-13.json",
+          "first_failed_outer_input": 11,
+          "all_evens_4_through_128": "pass",
+          "outer_steps_on_4_128_256": [
+            14,
+            14,
+            14
+          ],
+          "proof_status": "unproved"
+        },
+        {
+          "frontier": "frontier-8-7.json",
+          "first_failed_outer_input": 11,
+          "all_evens_4_through_128": "pass",
+          "outer_steps_on_4_128_256": [
+            104,
+            104,
+            104
+          ],
+          "proof_status": "unproved"
+        }
+      ]
     }
   ],
   "validation": {
-    "regression_tests": 29,
+    "regression_tests": 32,
     "baseline_search_survivors": 7,
     "independent_24_state_report": "unchanged",
     "baseline_audit_report": "unchanged",
-    "formal_source_and_table_hashes": "all match reference/proof24.json",
+    "formal_source_and_table_hashes": "Match current reference/proof24.json; finite-prefix module and import added, literal machine unchanged.",
     "formal_build_2026_10_15": "Serial module builds, default lake build, and headline axiom check passed on the pinned toolchain."
   },
-  "scope": "Bounded phase contracts and transition families; broader runs permit later startup and changed internal primality/pair interfaces. Outer tape representation remains fixed. Counts include repeated tables. Solver budget/unknown is inconclusive; no lower bound or unbounded correctness follows from finite search."
+  "scope": "Bounded transition families and phase contracts. Some runs require odd outer behavior; even-domain proposals are retained with diagnostics and require separate unbounded proof. Later initialization is supported by the default-build verified finite prefix. No search result proves a lower bound or an unbounded arithmetic reduction."
 }
