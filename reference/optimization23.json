@@ -1253,12 +1253,13 @@
     }
   ],
   "validation": {
-    "regression_tests": 34,
+    "regression_tests": 35,
     "baseline_search_survivors": 7,
     "independent_24_state_report": "unchanged",
     "baseline_audit_report": "unchanged",
-    "formal_source_and_table_hashes": "Match current reference/proof24.json; finite-prefix module and import added, literal machine unchanged.",
-    "formal_build_2026_10_15": "Serial module builds, default lake build, and headline axiom check passed on the pinned toolchain."
+    "formal_source_and_table_hashes": "Match current reference/proof24.json; the accepted literal machine is unchanged. The changed-return fragment, complete 24-state compatibility caller and generic local helper contract are imported by the default build.",
+    "formal_build_2026_10_15": "Serial module builds, default lake build, and headline axiom check passed on the pinned toolchain.",
+    "formal_changed_return_build_2026_10_16": "Default serial lake build and all headline/fragment/adapter/helper axiom reports passed on the pinned toolchain."
   },
   "scope": "Bounded transition families and phase contracts. Some runs require odd outer behavior; even-domain proposals are retained with diagnostics and require separate unbounded proof. Later initialization is supported by the default-build verified finite prefix. No search result proves a lower bound or an unbounded arithmetic reduction.",
   "structural_classifier": {
@@ -1361,7 +1362,8 @@
         "ChangedReturn.prime_20",
         "ChangedReturn.n_prime_16",
         "ChangedReturn.classifies",
-        "ChangedReturn.terminates"
+        "ChangedReturn.terminates",
+        "ChangedReturn.restore_prime_exit"
       ],
       "domain": "Every positive unary input, arbitrary separated left/right tape contexts, and arbitrary caller transitions outside the arithmetic fragment.",
       "progress": "Strictly later return; halting caller terminates.",
@@ -1408,6 +1410,91 @@
         "scope": "finite diagnostics for a 24-state compatibility adapter; no 23-state claim"
       },
       "scope": "Complete compatibility composition using the freed state as a caller helper. Still 24 states; not an accepted 23-state reduction."
+    },
+    "helper_elimination": {
+      "local_contract": "ChangedReturn.restore_prime_exit",
+      "arithmetic_fixed_branches": 35,
+      "arithmetic_source": "formal/GoldbachTm/ChangedReturn/Machine.lean",
+      "entry_transition": [
+        20,
+        0,
+        1,
+        -1,
+        17
+      ],
+      "direct_helper_transition": [
+        17,
+        0,
+        0,
+        -1,
+        22
+      ],
+      "even_outer_inputs": [
+        4,
+        128
+      ],
+      "phase_factor": 24,
+      "classification_offset": 0,
+      "success_certificates": true,
+      "bootstrap": {
+        "steps": 1000000,
+        "max_even": 256,
+        "tape_cells": 32768,
+        "max_ones": 2048
+      },
+      "input_sha256": "6ca92228509f0dee503017fbd3ab1786fe70ed479b7d79df4deba8ca7a49d4a3",
+      "source_sha256": {
+        "search23.cpp": "a54e8bc7606f290e1a57afc401d405fe38b88949b2808b3541735e7c48212f8d",
+        "phase_screen.hpp": "73869822f551cc5eeb694a7faee4159654b353543d4717b3e254b7d957e59a7d",
+        "search23.py": "78f7794ca362af5209485b2635de48b0fdcc58dd5e6fba265b7119cecd1bec2c",
+        "search_scans.py": "d8f7c99bf411ee3257addf8611184e54aeaf585c83e382ec4ee7500002e0a0e5"
+      },
+      "runs": [
+        {
+          "hypothesis": "direct_helper_17",
+          "seed": 1624,
+          "repair_allowance_from_original_table": 46,
+          "summary": {
+            "removed": 3,
+            "merged_into": 12,
+            "checks": 10000,
+            "status": "budget",
+            "finite_survivors": 0,
+            "furthest_fixture": 0,
+            "bootstrap_rejections": 0
+          }
+        },
+        {
+          "hypothesis": "helper_17_entry_free_zero_branch",
+          "seed": 1625,
+          "repair_allowance_from_original_table": 46,
+          "summary": {
+            "removed": 3,
+            "merged_into": 12,
+            "checks": 20000,
+            "status": "budget",
+            "finite_survivors": 0,
+            "furthest_fixture": 0,
+            "bootstrap_rejections": 0
+          }
+        },
+        {
+          "hypothesis": "direct_helper_17_two_additional_repairs",
+          "seed": 1626,
+          "repair_allowance_from_original_table": 11,
+          "summary": {
+            "removed": 3,
+            "merged_into": 12,
+            "checks": 20000,
+            "status": "budget",
+            "finite_survivors": 0,
+            "furthest_fixture": 1,
+            "bootstrap_rejections": 0
+          }
+        }
+      ],
+      "positive_control": "The fully proved 24-state adapter passes the corrected certificate guide, including nonprime input 1 at offset -1 and prime returns at offset 0. All 35 regression tests pass.",
+      "scope": "Bounded model budgets only; no surviving smaller machine, no initialization attempts, and no state lower bound. A preliminary run with the old exact-offset certificate guide was invalid for this changed-return interface and is not counted."
     }
   }
 }

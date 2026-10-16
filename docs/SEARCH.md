@@ -275,3 +275,21 @@ equivalence for this table, including pair search and strict outer progress.
 The helper occupies the state removed from the arithmetic body, leaving 24
 states overall. It is a checked basis for further fusion, not a smaller-machine
 claim, and the published Tm24 headline and table remain unchanged.
+
+The certificate guide now accepts classification returns at or left of
+`--classification-offset`. This matters for the proved fragment: a prime returns
+at offset zero, while the nonprime input one returns at offset minus one. The
+proved 24-state adapter is a regression control for that asymmetric convention;
+its whole-phase fixtures must pass with `--classification-offset 0` and
+`--success-certificates` together. Direct arithmetic bypasses remain rejected.
+
+A targeted helper-elimination family shares state 17: `20/0: 1,L,17` followed
+by `17/0: 0,L,22`. The generic `ChangedReturn.restore_prime_exit` theorem proves
+that these two transitions implement the required local return. All 35 arithmetic
+branches remain fixed in the experiments; the other caller branches may change.
+With corrected certificates and even outer fixtures 4–128, 10,000 models for the
+direct helper and 20,000 models with state 17's zero branch free produced no
+survivor. A further 20,000 models restricted the direct helper to at most two
+additional caller repairs. Its best frontier passed 4 and failed 6; separate
+pair diagnostics also rejected composite-pair acceptance. These are exhausted
+model budgets, not lower bounds. No model reached the initialization gate.

@@ -40,6 +40,10 @@ class SearchScreenTests(unittest.TestCase):
         subprocess.run([compiler, '-std=c++17', '-O2', '-DSCREEN_LIBRARY', '-shared',
                         '-fPIC', '-DSUCCESS_CERTIFICATES=1', str(ROOT/'tools/search23.cpp'),
                         '-o', str(cls.certificate_library)], check=True)
+        cls.certificate_edge_library = Path(cls.directory.name)/'certificate-edge-screen.so'
+        subprocess.run([compiler, '-std=c++17', '-O2', '-DSCREEN_LIBRARY', '-shared',
+                        '-fPIC', '-DSUCCESS_CERTIFICATES=1', '-DCLASSIFICATION_OFFSET=0',
+                        str(ROOT/'tools/search23.cpp'), '-o', str(cls.certificate_edge_library)], check=True)
 
     def screen(self, machine, fixtures, library=None):
         lib = load_screen(library or self.library, fixtures)
@@ -101,6 +105,15 @@ class SearchScreenTests(unittest.TestCase):
         bypass = self.changed({(21,0):(1,1,0), (0,0):(1,1,21)})
         self.assertNotEqual(self.screen(bypass, fixture)[0], 0)
         self.assertEqual(self.screen(bypass, fixture, self.certificate_library)[0], 0)
+
+    def test_success_certificates_allow_the_proved_changed_return_adapter(self):
+        # Prime returns are at offset 0, while the input 1 returns at offset -1.
+        # Both must finish the pending call before the next prime can be observed.
+        m = self.changed({(0,1):(0,1,1), (1,0):(0,-1,4), (2,1):(0,1,12),
+                          (4,1):(0,1,19), (5,0):(0,1,4), (5,1):(1,-1,5),
+                          (18,0):(1,-1,5), (20,0):(1,-1,3), (3,0):(0,-1,22)})
+        fixtures = [outer_fixture(self.machine, n) for n in (4,6,8,10,12)]
+        self.assertEqual(self.screen(m, fixtures, self.certificate_edge_library)[:2], (-1,18))
 
     def test_repair_search_recovers_known_toy_quotient(self):
         # A four-step blank bootstrap plus a one-step nonprime return. Merging

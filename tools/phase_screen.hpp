@@ -44,7 +44,7 @@ int run(const Machine&m,int dead,int keep,const Fixture&f,int factor=PHASE_FACTO
   count+=e.w-tape[h];tape[h]=e.w;h+=e.d;q=e.q;
   if(h<128||h>=896||q==dead||count>maxcount) return 0;
 #if SUCCESS_CERTIFICATES
-  if(pending&&h==call_head+CLASSIFICATION_OFFSET&&(q==map(16)||q==map(20))){
+  if(pending&&h<=call_head+CLASSIFICATION_OFFSET&&(q==map(16)||q==map(20))){
    if((q==map(20))!=prime(call_input))return 0;
    if(q==map(20))tested_primes.push_back(call_input);
    pending=false;

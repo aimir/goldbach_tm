@@ -28,3 +28,9 @@ proves exact initialization from state 18 on the all-zero tape after 27 steps.
 `Adapter.halts_iff_goldbach_counterexample` proves the complete unbounded
 halting equivalence, including pair search and outer progress. It is imported
 by the default build but does not replace the original Tm24 headline.
+
+`restore_prime_exit` also states the local adapter contract for any helper state
+with the two required transitions. This lets a proposed shared helper reuse the
+exact arithmetic return proof. Reusing a caller state still requires the complete
+caller proof: a locally correct return step may conflict with that state's other
+role in failed-pair advancement or growth.

@@ -25,7 +25,7 @@
     "result": "success"
   },
   "source_sha256": {
-    "formal/CheckAxioms.lean": "d64c4d01f55980f973c9b2afbbccd736819f075862eab145446f6b874c38a957",
+    "formal/CheckAxioms.lean": "def20852a2e17a403945aff4caedd6d59218f05746a6a2adbfd506148cea1223",
     "formal/GoldbachTm.lean": "e2b5634377fb59541dc4f5feca65bb246a358be7b3f1cfcc0764215e80b17919",
     "formal/GoldbachTm/Basic.lean": "e862b629dd2388b55686b5f9e830634ace0a0b60617882e2ca400d0925ef6267",
     "formal/GoldbachTm/ChangedReturn/Adapter/Correctness.lean": "9bdaf06730dd82181e7bc4b0a6cc07c3142ea0134ef8c33dd158a5e512a6fe30",
@@ -33,7 +33,7 @@
     "formal/GoldbachTm/ChangedReturn/Adapter/Machine.lean": "73f308fdd17069f448572eabb450f6697275127b998fecba0e87fbb0fe830c74",
     "formal/GoldbachTm/ChangedReturn/Adapter/PairSearch.lean": "91a6ca2a3bde5a085650ab92b19c3c7217464b31dafd5b67e58f21aea09148dd",
     "formal/GoldbachTm/ChangedReturn/Adapter/Scans.lean": "e885851dcf16b44b9afa0c11c1f6ee5748caa3a75130b27d4bc7bce15fffa55e",
-    "formal/GoldbachTm/ChangedReturn/Contract.lean": "1befeb650683d404212e213af75638722fe6f9b1ae850026c543c98a97f64635",
+    "formal/GoldbachTm/ChangedReturn/Contract.lean": "45a880d10b54006d9f54e7a3644ce0b9522de6b510ea401dd5afd0a52d899d38",
     "formal/GoldbachTm/ChangedReturn/LocalTransitions.lean": "eaa53d1232925a22386bf2914a19d5f4663650be12970fc014bb06289f8f8362",
     "formal/GoldbachTm/ChangedReturn/Machine.lean": "c311f1af60bcd7e7b0967572bce0b1f9834a8177bbddbfa31699d649b0f08387",
     "formal/GoldbachTm/ChangedReturn/MarkerLoops.lean": "476324f4fb58fcddf6cfb4f6def55147666d415dd54901e0ada7c35d8f3c67d4",
@@ -91,6 +91,16 @@
       "default_build": "success",
       "axiom_check": "propext, Classical.choice, Quot.sound",
       "scope": "Complete unbounded composition of the changed arithmetic fragment with a helper-state caller. The accepted Tm24 table and headline remain unchanged."
+    },
+    "local_adapter_contract": {
+      "theorem": "ChangedReturn.restore_prime_exit",
+      "steps": 2,
+      "helper_state": "arbitrary Fin 24 satisfying the two specified branches",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "scope": "Exact local return compatibility only; sharing a helper with another caller role still needs whole composition correctness."
     }
   }
 }
