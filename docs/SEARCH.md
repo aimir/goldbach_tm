@@ -240,3 +240,27 @@ The strengthened screen still reproduces all seven finite 25-to-24 candidates,
 including the selected candidate with its full Lean proof. The independent
 24-state verification and original baseline-audit reports are unchanged. All
 machine/proof files match the hashes in [proof24.json](../reference/proof24.json).
+
+## Unbounded changed-return arithmetic contract
+
+The seven-rewrite classifier above now has a kernel-checked unbounded proof in
+[`ChangedReturn/Contract.lean`](../formal/GoldbachTm/ChangedReturn/Contract.lean),
+imported by the default build. `ChangedReturn.classifies` covers every positive
+unary input and arbitrary separated left/right tape contexts. It proves strict
+progress and the exact two returns: a nonprime input is restored completely and
+returns in state 16 on its left separator; a prime input returns in state 20 on
+its first input cell, erasing exactly that cell. `ChangedReturn.terminates`
+proves termination when both exits are connected to halting transitions.
+
+The arithmetic proofs quantify arbitrary transitions at the unused caller
+branches. In particular they do not assume the old prime-return interface,
+blank initialization, or any bounded simulation. The changed failed-divisor
+route restores the original modular invariant before increasing the trial
+divisor. The prime tail has an additional restoration sweep through states
+12 and 14 before it reaches the changed return.
+
+This is a proved fragment, not an accepted 23-state machine. Its formal type
+retains the original `Fin 24` labels so callers can be composed explicitly. A
+complete reduction still requires a caller using at most 23 states, exact blank
+initialization, and unbounded outer progress. The current headline remains the
+original 24-state theorem.

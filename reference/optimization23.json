@@ -1324,7 +1324,7 @@
       "steps": 16470594,
       "prime_return": "state 20 at first input cell, exactly that cell erased",
       "composite_return": "original state-16 return with exact tape restoration",
-      "scope": "finite checks only; no unbounded theorem or caller compatibility proved"
+      "scope": "Finite diagnostic checks only; see formal_contract for the separately checked unbounded fragment proof."
     },
     "free_caller_branches": [
       [
@@ -1354,6 +1354,20 @@
     ],
     "unbounded_proof": false,
     "caller_compatibility_proved": false,
-    "accepted": false
+    "accepted": false,
+    "formal_contract": {
+      "module": "formal/GoldbachTm/ChangedReturn/Contract.lean",
+      "theorems": [
+        "ChangedReturn.prime_20",
+        "ChangedReturn.n_prime_16",
+        "ChangedReturn.classifies",
+        "ChangedReturn.terminates"
+      ],
+      "domain": "Every positive unary input, arbitrary separated left/right tape contexts, and arbitrary caller transitions outside the arithmetic fragment.",
+      "progress": "Strictly later return; halting caller terminates.",
+      "proof": "Ordinary Lean kernel; no sorry or native-computation axiom.",
+      "whole_machine_23": false,
+      "scope": "Arithmetic fragment only. Caller compatibility, exact blank initialization and unbounded outer progress still required for a 23-state claim."
+    }
   }
 }
