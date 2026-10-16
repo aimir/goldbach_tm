@@ -32,9 +32,17 @@ class SearchScreenTests(unittest.TestCase):
                         '-fPIC', '-DBOOTSTRAP_STEPS=1000000', '-DBOOTSTRAP_MAX_EVEN=256',
                         '-DBOOTSTRAP_TAPE=32768', '-DBOOTSTRAP_MAX_ONES=2048',
                         str(ROOT/'tools/search23.cpp'), '-o', str(cls.broad_library)], check=True)
+        cls.edge_library = Path(cls.directory.name)/'edge-screen.so'
+        subprocess.run([compiler, '-std=c++17', '-O2', '-DSCREEN_LIBRARY', '-shared',
+                        '-fPIC', '-DCLASSIFICATION_OFFSET=0', str(ROOT/'tools/search23.cpp'),
+                        '-o', str(cls.edge_library)], check=True)
+        cls.certificate_library = Path(cls.directory.name)/'certificate-screen.so'
+        subprocess.run([compiler, '-std=c++17', '-O2', '-DSCREEN_LIBRARY', '-shared',
+                        '-fPIC', '-DSUCCESS_CERTIFICATES=1', str(ROOT/'tools/search23.cpp'),
+                        '-o', str(cls.certificate_library)], check=True)
 
-    def screen(self, machine, fixtures):
-        lib = load_screen(self.library, fixtures)
+    def screen(self, machine, fixtures, library=None):
+        lib = load_screen(library or self.library, fixtures)
         data = [encode(edge or (0,0,-1)) for row in machine for edge in row]
         trace = ctypes.c_uint64()
         status = lib.check((ctypes.c_int*48)(*data), -1, -1, ctypes.byref(trace))
@@ -87,6 +95,13 @@ class SearchScreenTests(unittest.TestCase):
         self.assertTrue(report['original_pair_interface']['failed'])
         self.assertTrue(any(f['input'] == 11 for f in report['odd_outer_domain']['failed']))
 
+    def test_success_certificate_guide_rejects_arithmetic_bypass(self):
+        fixture = [(1,8,0,True,check_outer(self.machine, 8)['steps'])]
+        self.assertEqual(self.screen(self.machine, fixture, self.certificate_library)[0], -1)
+        bypass = self.changed({(21,0):(1,1,0), (0,0):(1,1,21)})
+        self.assertNotEqual(self.screen(bypass, fixture)[0], 0)
+        self.assertEqual(self.screen(bypass, fixture, self.certificate_library)[0], 0)
+
     def test_repair_search_recovers_known_toy_quotient(self):
         # A four-step blank bootstrap plus a one-step nonprime return. Merging
         # 0 into 1 breaks that return; one repaired edge and starting in 4 recover
@@ -124,6 +139,13 @@ class SearchScreenTests(unittest.TestCase):
         m = self.changed({(0,1):(0,-1,16)})
         self.assertEqual(self.screen(m, [(2,1,0,False,3)])[0], 0)
         self.assertEqual(self.screen(m, [(4,1,0,False,3)])[:2], (-1,18))
+
+    def test_classification_return_may_be_on_first_erased_input_cell(self):
+        m = self.changed({(0,1):(0,1,20), (20,0):(0,-1,16),
+                          (4,0):(1,1,5), (5,0):(1,1,6),
+                          (6,0):(1,1,7), (7,0):(1,1,21)})
+        self.assertEqual(self.screen(m, [(4,2,0,True,3)])[0], 0)
+        self.assertEqual(self.screen(m, [(4,2,0,True,3)], self.edge_library)[0], -1)
 
     def test_first_pair_return_with_wrong_number_is_rejected(self):
         m = self.changed({(17,1):(1,-1,16), (16,0):(1,1,17)})

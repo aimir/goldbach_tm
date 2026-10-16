@@ -194,6 +194,10 @@ def main():
     parser.add_argument('--survivors-per-pair', type=int, default=1, help='Solver: finite proposal limit for each merged pair')
     parser.add_argument('--odd-classification', action='store_true',
                         help='Whole-phase mode: add odd/2 primality-result checks with free return tape and left head position')
+    parser.add_argument('--classification-offset', type=int, default=-1,
+                        help='Rightmost allowed classification return head, relative to the first input cell')
+    parser.add_argument('--success-certificates', action='store_true',
+                        help='Guide whole-phase synthesis by requiring tested prime inputs whose sum is the outer input')
     parser.add_argument('--iterations', type=int, default=10000, help='Solver candidate budget per ordered state pair')
     parser.add_argument('--seed', type=int, default=2423)
     parser.add_argument('--bootstrap-steps', type=int, default=235)
@@ -217,11 +221,11 @@ def main():
     if any(not (0 <= q < 24 and b in (0,1) and w in (0,1) and move in (-1,1) and -1 <= target < 24)
            for q,b,w,move,target in args.fixed_edge or []):
         parser.error('Invalid fixed edge')
-    if args.even_only and not args.whole_phase_only:
-        parser.error('--even-only requires --whole-phase-only')
-    if args.odd_classification and not args.whole_phase_only:
-        parser.error('--odd-classification requires --whole-phase-only')
-    if (args.phase_factor < 1 or args.bootstrap_steps < 1 or args.bootstrap_max_even < 4 or
+    if args.even_only and not (args.whole_phase_only or args.pairs_only):
+        parser.error('--even-only requires --whole-phase-only or --pairs-only')
+    if args.odd_classification and not (args.whole_phase_only or args.pairs_only):
+        parser.error('--odd-classification requires --whole-phase-only or --pairs-only')
+    if (not -128 <= args.classification_offset <= 128 or args.phase_factor < 1 or args.bootstrap_steps < 1 or args.bootstrap_max_even < 4 or
             args.bootstrap_max_even % 2 or args.bootstrap_tape < 16 or
             args.bootstrap_max_ones < args.bootstrap_max_even):
         parser.error('Invalid bootstrap limits')
@@ -254,8 +258,9 @@ def main():
         data = '\n'.join(lines[:48]+[f'{core} {len(fixtures)}']+fixtures)+'\n'
     if args.even_only:
         lines = data.splitlines()
-        fixtures = [line for line in lines[49:] if int(line.split()[1]) % 2 == 0]
-        data = '\n'.join(lines[:48]+[f'0 {len(fixtures)}']+fixtures)+'\n'
+        fixtures = [line for line in lines[49:] if not line.startswith('1 ') or int(line.split()[1]) % 2 == 0]
+        core = sum(not line.startswith('1 ') for line in fixtures)
+        data = '\n'.join(lines[:48]+[f'{core} {len(fixtures)}']+fixtures)+'\n'
     if classification:
         lines = data.splitlines()
         fixtures = classification+lines[49:]
@@ -270,6 +275,8 @@ def main():
                 'outer_through': args.outer_through,
                 'even_only': args.even_only, 'max_survivors': args.max_survivors,
                 'odd_classification': args.odd_classification,
+                'classification_offset': args.classification_offset,
+                'success_certificates': args.success_certificates,
                 'survivors_per_pair': args.survivors_per_pair,
                 'input_sha256': hashlib.sha256(data.encode()).hexdigest(),
                 'source_sha256': {name: hashlib.sha256((ROOT/'tools'/name).read_bytes()).hexdigest()
@@ -283,6 +290,8 @@ def main():
         output = Path(directory)/('screen.dylib' if sys.platform == 'darwin' else 'screen.so')
         flags = ['-DSCREEN_LIBRARY', '-shared', '-fPIC'] if args.method == 'solver' else []
         flags += [f'-DPHASE_FACTOR={args.phase_factor}',
+                  f'-DCLASSIFICATION_OFFSET={args.classification_offset}',
+                  f'-DSUCCESS_CERTIFICATES={int(args.success_certificates)}',
                   f'-DBOOTSTRAP_STEPS={args.bootstrap_steps}',
                   f'-DBOOTSTRAP_MAX_EVEN={args.bootstrap_max_even}',
                   f'-DBOOTSTRAP_TAPE={args.bootstrap_tape}',

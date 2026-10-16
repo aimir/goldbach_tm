@@ -52,6 +52,21 @@ also enters that fragment. A seven-rewrite prototype restoring tiny inputs and
 blank startup first misclassifies 11, where an internal marker stops the reused
 eraser early. Any accepted construction must repair and prove that entire loop.
 
+A revised seven-rewrite fragment fixes that trial reinitialization by preserving
+the left counter during a scan and erasing its first cell before resuming. It
+passes 256 primality checks on inputs 1–128, including arbitrary tape context:
+composites return with exact restoration; primes leave their first input cell
+erased and return there in state 20. This is an unproved arithmetic fragment,
+not a Goldbach machine. Fixing that fragment and freeing six caller branches
+produced four whole-phase bypass proposals in 125 models. With canonical pair
+compatibility required, 50,000 models found no survivor; the strongest prefix
+first failed on the successful pair `(3,5)`. Caller compatibility, halting on
+exhaustion, and an unbounded proof remain necessary.
+A fusion-oriented run instead required observed successful prime tests summing
+to the outer input, without canonical pair boundaries. Its 50,000-model budget
+also found no survivor; its best prefix advanced 4 but failed on 6. This does not
+rule out other callers or tape representations.
+
 ## Search model
 
 Choose an ordered pair of states, redirect every incoming transition from the
@@ -125,6 +140,19 @@ change and the head to return farther left, so the caller may consume a modified
 layout. The prime/nonprime flags remain mapped states 20/16. This guides synthesis
 away from trivial always-advance proposals while retaining another restricted
 interface family; it is not a requirement of the headline theorem.
+`--classification-offset 0` permits a flag on the first input cell, for example
+when a prime routine leaves precisely that cell erased for its caller to restore.
+Combining `--pairs-only --even-only` retains the canonical pair contracts while
+dropping unreachable odd outer inputs, providing a stricter caller-composition
+gate for such a fragment.
+
+`--success-certificates` is another optional whole-phase guide for that family:
+before an outer success, it requires observed prime-classification calls whose
+input values sum to the current outer input. It does not require canonical failed
+pair returns, so it can screen proposed summand/advance fusions. The checker keeps
+these observations and checks them arithmetically; they are search instrumentation,
+not extra tape, states, or an oracle in the candidate machine. This finite guide
+rejects simple arithmetic bypasses and still cannot establish unbounded correctness.
 
 The blank initialization screen now has independent configurable bounds. It can
 run through intermediate phases and accept any canonical even outer boundary
