@@ -1,4 +1,5 @@
 import GoldbachTm.Tm24.Correctness
+import GoldbachTm.FinitePrefix
 
 /-!
 # A 24-state binary Turing machine for Goldbach's conjecture

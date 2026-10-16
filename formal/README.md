@@ -30,6 +30,13 @@ The [module guide](GoldbachTm/Tm24/README.md) identifies the main intermediate
 lemmas. Short repeated scan lemmas are wrappers for different concrete states;
 they keep the arithmetic proofs close to the transition table.
 
+[FinitePrefix](GoldbachTm/FinitePrefix.lean) separately proves every even case
+from 4 through 256 using explicit witnesses and ordinary kernel-checked `decide`.
+Its tail-counterexample equivalence permits a future machine to start at a later
+verified even number while retaining the exact headline proposition; startup at
+10, for example, uses the verified cases 4, 6 and 8. The accepted machine's actual
+initialization is still the state-18, 25-step boundary for 4.
+
 ## Build and inspect
 
 With elan installed:
