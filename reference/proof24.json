@@ -25,9 +25,14 @@
     "result": "success"
   },
   "source_sha256": {
-    "formal/CheckAxioms.lean": "da65d993d4a7b22be28d9bc47ccd1fd642b94751272870e70324d07e519a9234",
-    "formal/GoldbachTm.lean": "c1ce612fc5b771b29209c52b113228ae7c9c8a633a05071316ce7c3836f2b08e",
+    "formal/CheckAxioms.lean": "d64c4d01f55980f973c9b2afbbccd736819f075862eab145446f6b874c38a957",
+    "formal/GoldbachTm.lean": "e2b5634377fb59541dc4f5feca65bb246a358be7b3f1cfcc0764215e80b17919",
     "formal/GoldbachTm/Basic.lean": "e862b629dd2388b55686b5f9e830634ace0a0b60617882e2ca400d0925ef6267",
+    "formal/GoldbachTm/ChangedReturn/Adapter/Correctness.lean": "9bdaf06730dd82181e7bc4b0a6cc07c3142ea0134ef8c33dd158a5e512a6fe30",
+    "formal/GoldbachTm/ChangedReturn/Adapter/Growth.lean": "5291cf2ec724b5aa466cd5d62009c39f8964ffbaed71fcae0de81cfc88c68883",
+    "formal/GoldbachTm/ChangedReturn/Adapter/Machine.lean": "73f308fdd17069f448572eabb450f6697275127b998fecba0e87fbb0fe830c74",
+    "formal/GoldbachTm/ChangedReturn/Adapter/PairSearch.lean": "91a6ca2a3bde5a085650ab92b19c3c7217464b31dafd5b67e58f21aea09148dd",
+    "formal/GoldbachTm/ChangedReturn/Adapter/Scans.lean": "e885851dcf16b44b9afa0c11c1f6ee5748caa3a75130b27d4bc7bce15fffa55e",
     "formal/GoldbachTm/ChangedReturn/Contract.lean": "1befeb650683d404212e213af75638722fe6f9b1ae850026c543c98a97f64635",
     "formal/GoldbachTm/ChangedReturn/LocalTransitions.lean": "eaa53d1232925a22386bf2914a19d5f4663650be12970fc014bb06289f8f8362",
     "formal/GoldbachTm/ChangedReturn/Machine.lean": "c311f1af60bcd7e7b0967572bce0b1f9834a8177bbddbfa31699d649b0f08387",
@@ -76,6 +81,16 @@
     ],
     "default_build": "success",
     "axiom_check": "propext, Classical.choice, Quot.sound",
-    "scope": "Unbounded positive-unary-input arithmetic contract with arbitrary separated contexts and caller branches; not a 23-state blank-tape theorem."
+    "scope": "Unbounded positive-unary-input arithmetic contract with arbitrary separated contexts and caller branches; not a 23-state blank-tape theorem.",
+    "compatibility_adapter": {
+      "states": 24,
+      "initial_state": 18,
+      "blank_startup_steps": 27,
+      "startup_theorem": "ChangedReturn.Adapter.cfg27",
+      "theorem": "ChangedReturn.Adapter.halts_iff_goldbach_counterexample",
+      "default_build": "success",
+      "axiom_check": "propext, Classical.choice, Quot.sound",
+      "scope": "Complete unbounded composition of the changed arithmetic fragment with a helper-state caller. The accepted Tm24 table and headline remain unchanged."
+    }
   }
 }

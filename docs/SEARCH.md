@@ -264,3 +264,14 @@ retains the original `Fin 24` labels so callers can be composed explicitly. A
 complete reduction still requires a caller using at most 23 states, exact blank
 initialization, and unbounded outer progress. The current headline remains the
 original 24-state theorem.
+
+The compatible caller in
+[`ChangedReturn/Adapter/`](../formal/GoldbachTm/ChangedReturn/Adapter/Correctness.lean)
+now has a complete unbounded composition proof. It restores a prime return with
+`20/0: 1,L,3` followed by `3/0: 0,L,22`. `Adapter.cfg27` proves literal blank
+initialization to the boundary for four after 27 steps.
+`Adapter.halts_iff_goldbach_counterexample` proves the same full Goldbach halting
+equivalence for this table, including pair search and strict outer progress.
+The helper occupies the state removed from the arithmetic body, leaving 24
+states overall. It is a checked basis for further fusion, not a smaller-machine
+claim, and the published Tm24 headline and table remain unchanged.

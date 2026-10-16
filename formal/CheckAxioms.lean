@@ -6,3 +6,4 @@ import GoldbachTm
 
 #print axioms ChangedReturn.classifies
 #print axioms ChangedReturn.terminates
+#print axioms ChangedReturn.Adapter.halts_iff_goldbach_counterexample

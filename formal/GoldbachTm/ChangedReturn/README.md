@@ -19,3 +19,12 @@ The modular-counter argument follows the existing Tm24 proof. The changed
 failed-divisor restoration and prime tail are proved for the new transitions.
 The scan and counter modules remain separated by the same proof responsibilities
 as Tm24. All contracts use ordinary kernel proofs at the pinned Lean toolchain.
+
+`Adapter/` supplies a complete compatibility check. Its state-20 zero transition
+writes one and moves left to state 3; state 3 on zero moves left to state 22.
+The new first-cell return is thereby restored and its separator skipped. This
+uses state 3 as a helper, so the result still has 24 states. `Adapter.cfg27`
+proves exact initialization from state 18 on the all-zero tape after 27 steps.
+`Adapter.halts_iff_goldbach_counterexample` proves the complete unbounded
+halting equivalence, including pair search and outer progress. It is imported
+by the default build but does not replace the original Tm24 headline.
